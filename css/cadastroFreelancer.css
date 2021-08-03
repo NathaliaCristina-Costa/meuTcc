@@ -655,6 +655,7 @@ progress {
   }
 }
 .row {
+  
   --bs-gutter-x: 1.5rem;
   --bs-gutter-y: 0;
   display: flex;
@@ -2983,23 +2984,23 @@ textarea.form-control-lg {
 }
 
 .btn-primary {
-  color: #fff;
-  background-color: #1abc9c;
-  border-color: #1abc9c;
+  color:#dc3545;
+  background-color: #0000;
+  border-color: #0000;
 }
 .btn-primary:hover {
-  color: #fff;
+  color: #dc3545;
   background-color: #16a085;
   border-color: #15967d;
 }
 .btn-check:focus + .btn-primary, .btn-primary:focus {
-  color: #fff;
+  color: #dc3545;
   background-color: #16a085;
   border-color: #15967d;
   box-shadow: 0 0 0 0.25rem rgba(60, 198, 171, 0.5);
 }
 .btn-check:checked + .btn-primary, .btn-check:active + .btn-primary, .btn-primary:active, .btn-primary.active, .show > .btn-primary.dropdown-toggle {
-  color: #fff;
+  color: #dc3545;
   background-color: #15967d;
   border-color: #148d75;
 }
@@ -3007,7 +3008,7 @@ textarea.form-control-lg {
   box-shadow: 0 0 0 0.25rem rgba(60, 198, 171, 0.5);
 }
 .btn-primary:disabled, .btn-primary.disabled {
-  color: #fff;
+  color: #dc3545;
   background-color: #1abc9c;
   border-color: #1abc9c;
 }
@@ -11128,4 +11129,21 @@ html {
 }
 .cadastro .cadastro-item .cadastro-item-caption .cadastro-item-caption-content {
   font-size: 1.5rem;
+}
+.imagem-login{
+  height: 340px;
+  opacity: 0.7;
+  border-radius: 0.5rem;
+}
+.imagem-freelancer{
+  height: 480px;
+  width: 500px;
+  opacity: 0.7;
+  border-radius: 0.5rem;
+}
+.imagem-cliente{
+  height: 500px;
+  width: 600px;
+  opacity: 0.7;
+  border-radius: 0.5rem;
 }

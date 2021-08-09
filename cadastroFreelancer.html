@@ -30,8 +30,9 @@
             <div class="card-body p-0">
                 <!-- Nested Row within Card Body -->
                 <div class="row">
-                    <div class="col-lg-6 d-none d-lg-block bg-register-image"><img class="masthead-avatar mb-5 imagem-freelancer"
-                            src="src/img/freelancer.jpg" alt="" /></div>
+                    <div class="col-lg-6 d-none d-lg-block bg-register-image"><img
+                            class="masthead-avatar mb-5 imagem-freelancer" src="src/img/freelancer.jpg" alt="" />
+                    </div>
                     <div class="col-lg-6">
                         <div class="p-5">
                             <div class="text-center">
@@ -67,87 +68,121 @@
                                             id="exampleRepeatPassword" placeholder="Confirme a Senha">
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <div class="col-sm-12 mb-3 mb-sm-6" id="categoria">
-                                        <select class="form-select form-select-lg mb-3"
-                                            aria-label=".form-select-lg example" >
-                                            <option selected value="" >Categorias</option>
-                                            <option value="evento">One</option>
-                                            <option value="reparo">Two</option>
-                                            <option value="saude">Three</option>
-                                            <option value="servicoDomestico">Four</option>
-                                            <option value="tecDesign">Five</option>
-                                            <option value="assTecnica">Six</option>
+                                <div class="form-group row">
+                                    <div class="col-sm-12 mb-3 mb-sm-6">
+                                        <select class="form-select form-select-md mb-3"
+                                            aria-label=".form-select-md example" id="mySelect">
+                                            <option>Escolha Categoria</option>
+                                            <option value="evento">Evento</option>
+                                            <option value="reparo">Reparo & Reforma</option>
+                                            <option value="saude">Saúde</option>
+                                            <option value="domestico">Serviço Doméstico</option>
+                                            <option value="tecnologia">Tecnologia & Design</option>
+                                            <option value="assistencia">Assistência Técnica</option>
                                         </select>
                                     </div>
                                 </div>
-                                <div class="form-group servicos" id="listaServico">
-                                    <div class="col-sm-12 mb-3 mb-sm-6" id="um servico">
-                                        <select class="form-select form-select-md mb-3"
-                                            aria-label=".form-select-lg example" id="evento">
-                                            <option selected value="S">Evento</option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
-                                        </select>
+                                <div class="form-group row">
+                                    <div class="col-sm-12">
+                                        <div id="reparoReforma">
+                                            <div class="col-sm-12 mb-3 mb-sm-12">
+                                                <select class="form-select form-select-md mb-3"
+                                                    aria-label=".form-select-lg example">
+                                                    <option selected value="S">Reparo & Reforma</option>
+                                                    <option value="1">One</option>
+                                                    <option value="2">Two</option>
+                                                    <option value="3">Three</option>
+                                                </select>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="col-sm-12 mb-3 mb-sm-6" id="dois servico">
-                                        <select class="form-select form-select-md mb-3"
-                                            aria-label=".form-select-lg example" id="reparo">
-                                            <option selected value="S">Reparo</option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
-                                        </select>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-12">
+                                        <div id="ServicoEvento">
+                                            <div class="col-sm-12 mb-3 mb-sm-12">
+                                                <select class="form-select form-select-md mb-3"
+                                                    aria-label=".form-select-lg example">
+                                                    <option selected value="S">Evento</option>
+                                                    <option value="1">One</option>
+                                                    <option value="2">Two</option>
+                                                    <option value="3">Three</option>
+                                                </select>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="col-sm-12 mb-3 mb-sm-6" id="tres servico">
-                                        <select class="form-select form-select-md mb-3"
-                                            aria-label=".form-select-lg example" id="saude">
-                                            <option selected value="S">Saude</option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
-                                        </select>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-12">
+                                        <div id="ServicoDomenstico">
+                                            <div class="col-sm-12 mb-3 mb-sm-12">
+                                                <select class="form-select form-select-md mb-3"
+                                                    aria-label=".form-select-lg example">
+                                                    <option selected value="S">Serviços Domésticos</option>
+                                                    <option value="1">One</option>
+                                                    <option value="2">Two</option>
+                                                    <option value="3">Three</option>
+                                                </select>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="col-sm-12 mb-3 mb-sm-6" id="quatro servico">
-                                        <select class="form-select form-select-md mb-3"
-                                            aria-label=".form-select-lg example" id="servicoDomestico">
-                                            <option selected value="S">Serviço Domestico</option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
-                                        </select>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-12">
+                                        <div id="ServicoSaude">
+                                            <div class="col-sm-12 mb-3 mb-sm-12">
+                                                <select class="form-select form-select-md mb-3"
+                                                    aria-label=".form-select-lg example">
+                                                    <option selected value="S">Saúde</option>
+                                                    <option value="1">One</option>
+                                                    <option value="2">Two</option>
+                                                    <option value="3">Three</option>
+                                                </select>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="col-sm-12 mb-3 mb-sm-6" id="cinco servico">
-                                        <select class="form-select form-select-md mb-3"
-                                            aria-label=".form-select-lg example" id="tecDesign">
-                                            <option selected value="S">Tec Design</option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
-                                        </select>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-12">
+                                        <div id="tecDesign">
+                                            <div class="col-sm-12 mb-3 mb-sm-12">
+                                                <select class="form-select form-select-md mb-3"
+                                                    aria-label=".form-select-lg example">
+                                                    <option selected value="S">Tecnologia & Design</option>
+                                                    <option value="1">One</option>
+                                                    <option value="2">Two</option>
+                                                    <option value="3">Three</option>
+                                                </select>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="col-sm-12 mb-3 mb-sm-6" id="seis servico">
-                                        <select class="form-select form-select-md mb-3"
-                                            aria-label=".form-select-lg example" id="assTecnica">
-                                            <option selected value="S">Ass Tec</option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
-                                        </select>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-12">
+                                        <div id="assTecnica">
+                                            <div class="col-sm-12 mb-3 mb-sm-12">
+                                                <select class="form-select form-select-md mb-3"
+                                                    aria-label=".form-select-lg example">
+                                                    <option selected value="S">Assistência Técnica</option>
+                                                    <option value="1">One</option>
+                                                    <option value="2">Two</option>
+                                                    <option value="3">Three</option>
+                                                </select>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                         </div>
                         <hr>
                         <br>
                         <div class="row justify-content-center">
-                            <div class="col-sm-6 col-lg-4 mb-3">                        
-                                <a href="login.html" class="btn btn-success btn-user btn-block ">
+                            <div class="col-sm-6 col-lg-4 mb-3">
+                                <a href="pagamento.html" class="btn btn-success btn-user btn-block ">
                                     Registrar Conta
                                 </a>
                             </div>
                         </div>
-                        
+
 
                         </form>
 
@@ -167,6 +202,7 @@
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
     Custom scripts for all pages-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/freelancer.js"></script>
 </body>

@@ -376,7 +376,7 @@
   <!-- Copyright Section-->
   <div class="copyright py-4 text-center text-white">
     <div class="container"><small>
-        <p>Feito com carinho</p> <i class="fab fa-gratipay"></i>
+        <p>Projeto Final</p><p>2021</p> <i class="fab fa-gratipay"></i>
       </small></div>
   </div>
 

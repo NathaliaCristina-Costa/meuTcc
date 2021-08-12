@@ -347,7 +347,7 @@
       <div class="row justify-content-center">
         <!-- Portfolio Item 1-->
         <a class="col-md-6 col-lg-4 mb-5 nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-          href="cadastroFreelancer.html">
+          href="cadastroFreelancer.php">
           <div class="cadastro-item mx-auto">
             <div class="cadastro-item-caption d-flex align-items-center justify-content-center h-100 w-100">
               <div class="cadastro-item-caption-content text-center text-white"><i class="fas fa-user-plus"></i>
@@ -359,7 +359,7 @@
         </a>
         <!-- Portfolio Item 2-->
         <a class="col-md-6 col-lg-4 mb-5 nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-          href="cadastroCliente.html"">
+          href="cadastroCliente.php"">
           <div class=" cadastro-item mx-auto">
           <div class="cadastro-item-caption d-flex align-items-center justify-content-center h-100 w-100">
             <div class="cadastro-item-caption-content text-center text-white"><i class="fas fa-user-plus"></i>

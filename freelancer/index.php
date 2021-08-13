@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<?php include("../classe/conexao.php");?>
+<?php include("../classe/conexao.php"); ?>
 <html>
 
 <head>
@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Administrador</title>
+    <title>Freelancer</title>
 
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
@@ -25,25 +25,23 @@
         <!-- Sidebar  -->
         <nav id="sidebar">
             <div class="sidebar-header">
-                <h3><i class="fas fa-user-shield"></i> Admin</h3>
+                <h3><i class="fas fa-people-carry"></i> Freelancer</h3>
             </div>
 
             <ul class="list-unstyled components">
 
+
                 <li>
-                    <a href="categoria.php"><i class="fas fa-bars mr-2 text-gray-400"></i> Categorias</a>
+                    <a href="freelancer.php"><i class="fas fa-people-carry mr-2 text-gray-400"></i> Editar Minha Categoria</a>
                 </li>
                 <li>
-                    <a href="servico.php"><i class="fas fa-bars mr-2 text-gray-400"></i> Serviços</a>
+                    <a href="freelancer.php"><i class="fas fa-people-carry mr-2 text-gray-400"></i> Pedidos Disponíveis</a>
                 </li>
                 <li>
-                    <a href="freelancer.php"><i class="fas fa-people-carry mr-2 text-gray-400"></i> Freelancers</a>
+                    <a href="cliente.php"><i class="fas fa-user-friends mr-2 text-gray-400"></i> Meus Pedidos</a>
                 </li>
                 <li>
-                    <a href="cliente.php"><i class="fas fa-user-friends mr-2 text-gray-400"></i> Clientes</a>
-                </li>
-                <li>
-                    <a href="atendimento.php"><i class="fas fa-comments mr-2 text-gray-400"></i> Mensagens do Atendimento</a>
+                    <a href="atendimento.php"><i class="fas fa-comments mr-2 text-gray-400"></i> Fale Conosco</a>
                 </li>
                 <li>
                     <a href="../login.php"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i> Sair</a>
@@ -53,7 +51,7 @@
 
         <!-- Page Content  -->
         <div id="content">
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-info">
                 <div class="container-fluid">
 
                     <button type="button" id="sidebarCollapse" class="btn btn-light">
@@ -130,7 +128,7 @@
                             <div class="row no-gutters align-items-center">
                                 <div class="col mr-2">
                                     <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                      Total Freelancers</div>
+                                        Total Freelancers</div>
                                     <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
                                 </div>
                                 <div class="col-auto">
@@ -189,7 +187,7 @@
     <footer class="bg-dark text-center text-white">
 
         <!-- Copyright -->
-        <div class="text-center p-3" style="background-color: #000">
+        <div class="text-center p-3" style="background-color: #33abd6">
             © Projeto Final
 
         </div>

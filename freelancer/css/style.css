@@ -23,11 +23,10 @@ a:focus {
     text-decoration: none;
     transition: all 0.3s;
 }
-.cor-barra{
-    background-color:#d63384;
-}
+
 .navbar {
     padding: 15px 10px;
+    background: #fff;
     border: none;
     border-radius: 0;
     margin-bottom: 40px;
@@ -51,7 +50,7 @@ a:focus {
     SIDEBAR STYLE
 ----------------------------------------------------- */
 .copyright{
-    background-color: #fab4d7;
+    background-color: #33abd6;
 }
 .wrapper {
     display: flex;
@@ -62,7 +61,7 @@ a:focus {
 #sidebar {
     min-width: 250px;
     max-width: 250px;
-    background: #d63384;
+    background: #33abd6;
     color: #fff;
     transition: all 0.3s;
 }
@@ -73,7 +72,7 @@ a:focus {
 
 #sidebar .sidebar-header {
     padding: 20px;
-    background: #d63384;
+    background: #33abd6;
 }
 
 #sidebar ul.components {

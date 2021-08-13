@@ -71,14 +71,10 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h4 class="card-title">Categoria</h4>
-                                    <p class="text-muted"><small>Digite o nome da Categoria</small></p>
+                                    <p class="text-muted"><small>Cadastre a Categoria</small></p>
                                     <div class="basic-form">
                                         <form class="form-inline">
-                                            <div class="form-group mb-2">
-                                               
-                                            </div>
                                             <div class="form-group mx-sm-2 mb-2">
-                                                <label class="sr-only">Password</label>
                                                 <input type="text" class="form-control" placeholder="">
                                             </div>
                                             <button type="submit" class="btn btn-primary mb-2">Confirmar</button>

@@ -24,7 +24,7 @@
 <body>
 
   <div class="container">
-
+    <div class="alert" id="alert" role="alert"></div>
     <div class="card o-hidden border-0 shadow-lg my-5">
       <div class="card-body p-0">
         <!-- Nested Row within Card Body -->
@@ -39,25 +39,25 @@
                 <p>Seja um cliente da nossa plataforma!</p>
                 <hr>
               </div>
-              <form class="user">
+              <form class="user" method="POST" action="salvaCliente.php">
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-6">
-                    <input type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="Nome">
+                    <input type="text" class="form-control form-control-user" name="nome" id="nome" placeholder="Nome">
                   </div>
                   <div class="col-sm-6">
-                    <input type="text" class="form-control form-control-user" id="exampleLastName"
+                    <input type="tel" class="form-control form-control-user" name="telefone" id="telefone"
                       placeholder="Telefone">
                   </div>
                 </div>
                 <div class="form-group">
                   <div class="col-sm-12 mb-3 mb-sm-6">
-                    <input type="email" class="form-control form-control-user" id="exampleInputEmail"
+                    <input type="email" class="form-control form-control-user" name="email" id="email"
                       placeholder="Email">
                   </div>
                 </div>
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-6">
-                    <input type="password" class="form-control form-control-user" id="exampleInputPassword"
+                    <input type="password" class="form-control form-control-user" name="senha" id="senha"
                       placeholder="Senha">
                   </div>
                   <div class="col-sm-6">
@@ -69,9 +69,7 @@
                 <br>
                 <div class="row justify-content-center">
                   <div class="col-sm-6 col-lg-4 mb-3">                        
-                      <a href="login.html" class="btn btn-success btn-user btn-block">
-                          Registrar Conta
-                      </a>
+                      <a href="login.php"><input type="submit" value="Registrar" class="btn" id="registrar"></a>
                   </div>
               </div>
                 
@@ -86,11 +84,12 @@
   </div>
 
   <!-- Bootstrap core JavaScript-->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="js/jquery.js"></script>
+  <!--script src="js/salvaCliente.js"></script>
+  
 
   <!-- Core plugin JavaScript-->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
 
 </body>

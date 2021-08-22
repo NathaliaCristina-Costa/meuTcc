@@ -1,31 +1,23 @@
 <?php
+  //Define o nome da classe a ser criada, no nosso caso Conexao
+  class Conexao
+  {
+        //Abaixo as respectivas variaveis para cada atributo de nossa classe
+          var $usuario                 = "root";
+          var $senha    = "";
+          var $hostname             = "localhost";
+          var $banco    = "estoque";
 
-class Conexao{
-    private $usuario;
-    private $senha;
-    private $banco;
-    private $servidor;
-    private static $pdo;
-    
-    public function __construct(){
-        $this->servidor = "localhost";
-        $this->banco = "projetofinal";
-        $this->usuario = "root";
-        $this->senha = "";
-    }
-    
-    public function conectar(){
-        try{
-            if(is_null(self::$pdo)){
-                self::$pdo = new PDO("mysql:host=".$this->servidor.";dbname=".$this->banco, $this->usuario, $this->senha);
-            }
-            return self::$pdo;
-        } catch (PDOException $ex) {
-			echo $ex->getMessage();
-        }
-    }
-    
-}
+          //Dois atributos extras, um para guardar o comando sql e outro para guardar o link conexao
+         var $link         = "";
 
+    //Definir método setConectar, tem a função de executar os códigos para conexao ao banco de dados
+    function setConectar()
+                {
+                //Faz a conexao com ao banco e armazena na variavel this->link
+                $this->link = mysql_pconnect($this->hostname,$this->usuario,$this->senha) or die (mysql_error());
+        //Seleciona o banco a ser usado no mysql
+                               mysql_select_db($this->banco, $this->link);
+                }
+  }
 ?>
-

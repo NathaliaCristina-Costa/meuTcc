@@ -91,21 +91,34 @@ $cat = new Categoria("projetofinal", "localhost", "root", "");
                                         </tr>
                                     </thead>
                                     <tbody>
-                                    <?php
-                                    $dados = $cat->buscarDados();
-                                    if (count($dados) > 0) {
-                                        for ($i = 0; $i < count($dados); $i++) {
-                                            echo "<tr>";
-                                            foreach ($dados[$i] as $k => $v) {
-                                                if ($k != "dataCadastro") {
-                                                    echo"<td>".$v."</td>";
+                                        <?php
+                                        $dados = $cat->buscarDados();
+                                        if (count($dados) > 0) {
+                                            for ($i = 0; $i < count($dados); $i++) {
+                                                echo "<tr>";
+                                                foreach ($dados[$i] as $k => $v) {
+                                                    if ($k != "dataCadastro") {
+                                                        echo "<td>" . $v . "</td>";
+                                                    }
                                                 }
+                                        ?>
+                                                <td>
+                                                    <div class="dropdown">
+                                                        <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                            Ações
+                                                        </button>
+                                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                            <a class="dropdown-item" href="#">Editar</a>
+                                                            <a class="dropdown-item" href="#">Excluir</a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                        <?php
+                                                echo "</tr>";
                                             }
-                                            echo "</tr>";
                                         }
-                                    }
-                                    ?>
-                                    </tbody>                                   
+                                        ?>
+                                    </tbody>
                                 </table>
                             </div>
                         </div>

@@ -164,5 +164,6 @@ $cat = new Categoria("projetofinal", "localhost", "root", "");
     if (isset($_GET['id'])) {
         $idCateg = addslashes($_GET['id']);
         $cat->excluirCategoria($idCateg);
+        header('location: /meuTcc/admin/categoria.php');
     }
 ?>

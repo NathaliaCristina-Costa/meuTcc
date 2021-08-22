@@ -44,7 +44,7 @@
 
         //METODO DE EXCLUSÃO
         public function excluirCategoria($id){
-            $cmd = $this->pd->prepare("DELETE FROM categoria WHERE id_Categoria = :id");
+            $cmd = $this->pdo->prepare("DELETE FROM categoria WHERE id_Categoria = :id");
             $cmd->bindValue(":id", $id);
             $cmd->execute();
         }
@@ -57,6 +57,9 @@
         public function atualizarDados(){
 
         }
+
+        //TOTAL DE CATEGORIAS REGISTRADAS
+        
     }
    
 ?>

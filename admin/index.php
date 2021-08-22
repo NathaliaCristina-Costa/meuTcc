@@ -1,3 +1,7 @@
+<?php
+require_once "../classe/Categoria.php";
+$cat = new Categoria("projetofinal", "localhost", "root", "");
+?>
 <!DOCTYPE html>
 <?php include("../classe/conexao.php");?>
 <html>
@@ -96,11 +100,10 @@
                             <div class="row no-gutters align-items-center">
                                 <div class="col mr-2">
                                     <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                        Total Categorias</div>
+                                        <a href="categoria.php">Total de Categorias</a> </div>
                                     <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
                                 </div>
-                                <div class="col-auto">
-                                    <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                <div class="col-auto"><i class="fas fa-calendar fa-2x text-gray-300"></i>
                                 </div>
                             </div>
                         </div>

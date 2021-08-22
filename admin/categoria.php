@@ -74,7 +74,7 @@ $cat = new Categoria("projetofinal", "localhost", "root", "");
                 </div>
 
                 <div class="container-fluid">
-
+                    
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
@@ -85,7 +85,6 @@ $cat = new Categoria("projetofinal", "localhost", "root", "");
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>ID</th>
                                             <th>Nome</th>
                                             <th>Ações</th>
                                         </tr>
@@ -97,7 +96,7 @@ $cat = new Categoria("projetofinal", "localhost", "root", "");
                                             for ($i = 0; $i < count($dados); $i++) {
                                                 echo "<tr>";
                                                 foreach ($dados[$i] as $k => $v) {
-                                                    if ($k != "dataCadastro") {
+                                                    if ($k != "id_Categoria" && $k != "dataCadastro") {
                                                         echo "<td>" . $v . "</td>";
                                                     }
                                                 }
@@ -108,14 +107,17 @@ $cat = new Categoria("projetofinal", "localhost", "root", "");
                                                             Ações
                                                         </button>
                                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                            <a class="dropdown-item" href="#">Editar</a>
-                                                            <a class="dropdown-item" href="#">Excluir</a>
+                                                            <a class="dropdown-item" href="categoriaCadastro.php?idEditar=<?php echo $dados[$i]['id_Categoria']; ?>">Editar</a>
+                                                            <a class="dropdown-item" href="categoria.php?id=<?php echo $dados[$i]['id_Categoria']; ?>">Excluir</a>
                                                         </div>
                                                     </div>
                                                 </td>
                                         <?php
                                                 echo "</tr>";
                                             }
+                                        } else //Não há registros.
+                                        {
+                                            echo "Não há Categorias Cadastradas";
                                         }
                                         ?>
                                     </tbody>
@@ -156,3 +158,11 @@ $cat = new Categoria("projetofinal", "localhost", "root", "");
 </body>
 
 </html>
+
+<?php 
+    //EXCLUIR E ATUALIZAR
+    if (isset($_GET['id'])) {
+        $idCateg = addslashes($_GET['id']);
+        $cat->excluirCategoria($idCateg);
+    }
+?>

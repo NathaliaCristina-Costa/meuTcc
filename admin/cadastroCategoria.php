@@ -1,3 +1,9 @@
+<?php
+require_once "../classe/Categoria.php";
+$cat = new Categoria("projetofinal", "localhost", "root", "");
+
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -66,16 +72,44 @@
 
                 <div class="container-fluid">
                     <div class="row">
-
+                    <?php
+                    ?>
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-body">
                                     <h4 class="card-title">Categoria</h4>
                                     <p class="text-muted"><small>Cadastre a Categoria</small></p>
                                     <div class="basic-form">
-                                        <form class="form-inline" method="POST" action="salvaCategoria.php">
+                                    <?php
+                                        //Se o name existe e o botão cadastrar foi acionado, então as informações vão ser recolhidas
+                                        if (isset($_POST['nome'])) {
+                                            //Função permite bloquear códigos maliciosos que terceiros podem colocar ao registrar informação
+                                            $nome = addslashes($_POST['nome']);
+
+                                            if ($cat->cadastrarCategoria($nome) == true) {
+                                                header('location: /meuTcc/admin/categoria.php');
+                                            }
+                                            //Preenchimento obrigatório, VERIFICAR SE VARIÁVEIS ESTÃO VAZIAS
+                                            else if (!empty($nome)) {
+                                                if (!$cat->cadastrarCategoria($nome)) {
+                                                    echo  "<script>alert('Categoria já Cadastrada! Cadastre Uma nova Categoria');</script>";
+
+                                                }
+                                                else if($cat->cadastrarCategoria($nome) == '') {
+                                                    echo  "Preencha o Campo da Categoria!";
+                                                }else{
+                                                    header('location: /meuTcc/admin/categoria.php');
+                                                }
+                                            } 
+                                            
+                                            
+
+                                            
+                                        }
+                                        ?>
+                                        <form class="form-inline" method="POST" action="">
                                             <div class="form-group mx-sm-2 mb-2">
-                                                <input type="text" class="form-control" placeholder="Digite a Categoria" name="nome">
+                                                <input type="text" class="form-control" placeholder="Digite a Categoria" name="nome" value="<?php if(isset($res)){echo $res['nome'];}?>">
                                             </div>
                                             <button type="submit" class="btn btn-primary mb-2" name="btCadastrar">Confirmar</button>
                                         </form>

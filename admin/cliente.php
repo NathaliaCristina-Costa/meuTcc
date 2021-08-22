@@ -1,3 +1,9 @@
+<?php
+require_once "../classe/Cliente.php";
+$cat = new Cliente("projetofinal", "localhost", "root", "");
+
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -77,12 +83,42 @@
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>ID</th>
                                             <th>Nome</th>
+                                            <th>Email</th>
+                                            <th>Telefone</th>
                                             <th>Ações</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <?php
+                                        $dados = $cat->buscarDados();
+                                        if (count($dados) > 0) {
+                                            for ($i = 0; $i < count($dados); $i++) {
+                                                echo "<tr>";
+                                                foreach ($dados[$i] as $k => $v) {
+                                                    if ($k != "id_Cliente" && $k != "senhaCliente") {
+                                                        echo "<td>" . $v . "</td>";
+                                                    }
+                                                }
+                                        ?>
+                                                <td>
+                                                    <div class="dropdown">
+                                                        <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                            Ações
+                                                        </button>
+                                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                            <a class="dropdown-item" href="">Excluir</a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                        <?php
+                                                echo "</tr>";
+                                            }
+                                        } else //Não há registros.
+                                        {
+                                            echo "Não há Categorias Cadastradas";
+                                        }
+                                        ?>
                                     </tbody>
                                 </table>
                             </div>

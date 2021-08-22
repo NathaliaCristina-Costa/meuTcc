@@ -73,11 +73,11 @@
                                     <h4 class="card-title">Categoria</h4>
                                     <p class="text-muted"><small>Cadastre a Categoria</small></p>
                                     <div class="basic-form">
-                                        <form class="form-inline">
+                                        <form class="form-inline" method="POST" action="salvaCategoria.php">
                                             <div class="form-group mx-sm-2 mb-2">
-                                                <input type="text" class="form-control" placeholder="">
+                                                <input type="text" class="form-control" placeholder="Digite a Categoria" name="nome">
                                             </div>
-                                            <button type="submit" class="btn btn-primary mb-2">Confirmar</button>
+                                            <button type="submit" class="btn btn-primary mb-2" name="btCadastrar">Confirmar</button>
                                         </form>
                                     </div>
                                 </div>

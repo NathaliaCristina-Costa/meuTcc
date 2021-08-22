@@ -1,3 +1,8 @@
+<?php
+require_once "../classe/Categoria.php";
+$cat = new Categoria("projetofinal", "localhost", "root", "");
+
+?>
 <!DOCTYPE html>
 <html>
 
@@ -86,7 +91,21 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                    </tbody>
+                                    <?php
+                                    $dados = $cat->buscarDados();
+                                    if (count($dados) > 0) {
+                                        for ($i = 0; $i < count($dados); $i++) {
+                                            echo "<tr>";
+                                            foreach ($dados[$i] as $k => $v) {
+                                                if ($k != "dataCadastro") {
+                                                    echo"<td>".$v."</td>";
+                                                }
+                                            }
+                                            echo "</tr>";
+                                        }
+                                    }
+                                    ?>
+                                    </tbody>                                   
                                 </table>
                             </div>
                         </div>

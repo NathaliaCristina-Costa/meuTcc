@@ -84,10 +84,12 @@
         }
 
         //TOTAL DE CATEGORIAS REGISTRADAS
-        public function totalRegistro(){
-            $contaProdutos = $this->pdo->prepare("SELECT * FROM categoria");
-            $contaProdutos->execute();
-           
+        public function totalRegistroCategoria(){
+            
+            $res = array();
+            $cmd = $this->pdo->query("SELECT * FROM categoria");
+            $res = $cmd->fetchAll(PDO::FETCH_ASSOC);
+            return $res;
            
         }
     }

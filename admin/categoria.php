@@ -108,7 +108,7 @@ $cat = new Categoria("projetofinal", "localhost", "root", "");
                                                         </button>
                                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                                             <a class="dropdown-item" href="editarCategoria.php?idEditar=<?php echo $dados[$i]['id_Categoria']; ?>">Editar</a>
-                                                            <a class="dropdown-item" href="categoria.php?id=<?php echo $dados[$i]['id_Categoria']; ?>">Excluir</a>
+                                                            <a class="dropdown-item" href="excluirCategoria.php?id=<?php echo $dados[$i]['id_Categoria']; ?>">Excluir</a>
                                                         </div>
                                                     </div>
                                                 </td>
@@ -158,10 +158,3 @@ $cat = new Categoria("projetofinal", "localhost", "root", "");
 
 </html>
 
-<?php
-//EXCLUIR E ATUALIZAR
-if (isset($_GET['id'])) {
-    $idCateg = addslashes($_GET['id']);
-    $cat->excluirCategoria($idCateg);
-}
-?>

@@ -1,6 +1,6 @@
 <?php
 require_once "../classe/Cliente.php";
-$cat = new Cliente("projetofinal", "localhost", "root", "");
+$cli = new Cliente("projetofinal", "localhost", "root", "");
 
 ?>
 
@@ -91,7 +91,7 @@ $cat = new Cliente("projetofinal", "localhost", "root", "");
                                     </thead>
                                     <tbody>
                                         <?php
-                                        $dados = $cat->buscarDados();
+                                        $dados = $cli->buscarDados();
                                         if (count($dados) > 0) {
                                             for ($i = 0; $i < count($dados); $i++) {
                                                 echo "<tr>";

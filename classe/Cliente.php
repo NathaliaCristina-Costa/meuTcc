@@ -22,6 +22,16 @@
             $res = $cmd->fetchAll(PDO::FETCH_ASSOC);
             return $res;
         }
+
+        //TOTAL DE CATEGORIAS REGISTRADAS
+        public function totalRegistroCliente(){
+            
+            $res = array();
+            $cmd = $this->pdo->query("SELECT * FROM cliente");
+            $res = $cmd->fetchAll(PDO::FETCH_ASSOC);
+            return $res;
+           
+        }
     }
 
 ?>

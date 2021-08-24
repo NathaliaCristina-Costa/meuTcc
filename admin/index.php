@@ -1,8 +1,10 @@
 <?php
 require_once "../classe/Categoria.php";
+require_once "../classe/Cliente.php";
 $cat = new Categoria("projetofinal", "localhost", "root", "");
+$cli = new Cliente("projetofinal", "localhost", "root", "");
 
-$contaProdutos = $cat->totalRegistro();
+
 ?>
 <!DOCTYPE html>
 <?php include("../classe/conexao.php"); ?>
@@ -98,23 +100,28 @@ $contaProdutos = $cat->totalRegistro();
                 <!-- Earnings (Monthly) Card Example -->
                 <div class="col-xl-4 col-md-6 mb-4">
                     <div class="card border-left-primary shadow h-100 py-2">
-                        <div class="card-body">
-                            <div class="row no-gutters align-items-center">
-                                <div class="col mr-2">
-                                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                        <a href="categoria.php">Total de Categorias</a>
+                        <a href="categoria.php">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-3">
+                                            Total de Categorias
+                                        </div>
+                                        <div class="text-center font-weight-bold text-primary text-uppercase mb-1">
+                                            <?php
+                                            $dados = $cat->totalRegistroCategoria();
+                                            echo "<h2>" . count($dados) . "</h2>";
+                                            ?>
+                                        </div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
                                     </div>
-                                    <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
-                                </div>
-                                <div class="col-auto">
-                                    <?php
-                                      
-                                    
-                                    ?>
-                                    <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                    <div class="col-auto">
+
+                                        <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
                 <div class="col-xl-4 col-md-6 mb-4">
@@ -156,22 +163,31 @@ $contaProdutos = $cat->totalRegistro();
                 <!-- Earnings (Monthly) Card Example -->
                 <div class="col-xl-6 col-md-6 mb-4">
                     <div class="card border-left-info shadow h-100 py-2">
-                        <div class="card-body">
-                            <div class="row no-gutters align-items-center">
-                                <div class="col mr-2">
-                                    <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Total de Clientes
-                                    </div>
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col-auto">
-                                            <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"></div>
+                        <a href="cliente.php">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                            Total de Clientes
+                                        </div>
+                                        <div class="text-center font-weight-bold text-info text-uppercase mb-1">
+                                            <?php
+                                            $dados = $cli->totalRegistroCliente();
+                                            echo "<h2>" . count($dados) . "</h2>";
+                                            ?>
+                                        </div>
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col-auto">
+                                                <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"></div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-auto">
-                                    <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                                    <div class="col-auto">
+                                        <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
 

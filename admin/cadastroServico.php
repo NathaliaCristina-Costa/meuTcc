@@ -1,3 +1,9 @@
+<?php
+require_once "../classe/Servico.php";
+$serv = new Servico("projetofinal", "localhost", "root", "");
+
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -73,7 +79,34 @@
                                     <h4 class="card-title">Serviço</h4>
                                     <p class="text-muted"><small>Cadastre o serviço</small></p>
                                     <div class="basic-form">
-                                        <form class="form-inline">
+                                    <?php
+                                        //Se o name existe e o botão cadastrar foi acionado, então as informações vão ser recolhidas
+                                        if (isset($_POST['nome'])) {
+                                            //Função permite bloquear códigos maliciosos que terceiros podem colocar ao registrar informação
+                                            $nome = addslashes($_POST['nome']);
+
+                                            if ($serv->cadastrarServico($nome) == true) {
+                                                header('location: /meuTcc/admin/servico.php');
+                                            }
+                                            //Preenchimento obrigatório, VERIFICAR SE VARIÁVEIS ESTÃO VAZIAS
+                                            else if (!empty($nome)) {
+                                                if (!$serv->cadastrarServico($nome)) {
+                                                    echo  "<script>alert('Serviço já Cadastrado! Cadastre Uma novo Serviço');</script>";
+
+                                                }
+                                                else if($serv->cadastrarServico($nome) == '') {
+                                                    echo  "Preencha o Campo do Serviço!";
+                                                }else{
+                                                    header('location: /meuTcc/admin/servico.php');
+                                                }
+                                            } 
+                                            
+                                            
+
+                                            
+                                        }
+                                    ?>
+                                        <form class="form-inline"  method="POST" action="">
                                             <div class="form-group mb-2">
                                                 <select class="form-select" aria-label="Default select example">
                                                     <option selected>Selecione Categoria do Serviço</option>
@@ -83,7 +116,7 @@
                                                 </select>
                                             </div>
                                             <div class="form-group mx-sm-2 mb-2">
-                                                <input type="text" class="form-control" placeholder="">
+                                            <input type="text" class="form-control" placeholder="Digite a Categoria" name="nome" value="<?php if(isset($res)){echo $res['nome'];}?>">
                                             </div>
                                             <button type="submit" class="btn btn-primary mb-2">Confirmar</button>
                                         </form>

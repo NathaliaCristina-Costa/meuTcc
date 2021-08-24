@@ -72,44 +72,74 @@ $cat = new Categoria("projetofinal", "localhost", "root", "");
 
                 <div class="container-fluid">
                     <div class="row">
-                    <?php
-                    ?>
+                        <?php
+                        if (isset($_GET['idEditar'])) {
+                            $idEditar = addslashes($_GET['idEditar']);
+                            $res = $cat->buscarDadosCategoria($idEditar);
+                        }
+                        ?>
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-body">
                                     <h4 class="card-title">Categoria</h4>
-                                    <p class="text-muted"><small>Cadastre a Categoria</small></p>
+                                    <p class="text-muted"><small>Edite a Categoria</small></p>
                                     <div class="basic-form">
                                     <?php
                                         //Se o name existe e o botão cadastrar foi acionado, então as informações vão ser recolhidas
                                         if (isset($_POST['nome'])) {
-                                            //Função permite bloquear códigos maliciosos que terceiros podem colocar ao registrar informação
-                                            $nome = addslashes($_POST['nome']);
 
-                                            if ($cat->cadastrarCategoria($nome) == true) {
-                                                header('location: /meuTcc/admin/categoria.php');
-                                            }
-                                            //Preenchimento obrigatório, VERIFICAR SE VARIÁVEIS ESTÃO VAZIAS
-                                            else if (!empty($nome)) {
-                                                if (!$cat->cadastrarCategoria($nome)) {
-                                                    echo  "<script>alert('Categoria já Cadastrada! Cadastre Uma nova Categoria');</script>";
+                                            if (isset($_GET['idEditar'])&& !empty($_GET['idEditar'])) {
+                                                //Função permite bloquear códigos maliciosos que terceiros podem colocar ao registrar informação
+                                                $idEditar = addslashes($_GET['idEditar']);
+                                                $nome = addslashes($_POST['nome']);
 
+                                                if ($cat->atualizarDados($idEditar, $nome) == true) {
+                                                    header('location: /meuTcc/admin/categoria.php');
                                                 }
-                                                else if($cat->cadastrarCategoria($nome) == '') {
-                                                    echo  "Preencha o Campo da Categoria!";
-                                                }
-                                            } 
-                                            
-                                            
+                                                //Preenchimento obrigatório, VERIFICAR SE VARIÁVEIS ESTÃO VAZIAS
+                                                else if (!empty($nome)) {
+                                                    if (!$cat->atualizarDados($idEditar, $nome)) {
+                                                        echo  "<script>alert('Categoria já Cadastrada! Cadastre Uma nova Categoria');</script>";
 
-                                            
+                                                    }
+                                                    else if($cat->atualizarDados($idEditar, $nome) == '') {
+                                                        echo  "Preencha o Campo da Categoria!";
+                                                    }else{
+                                                        header('location: /meuTcc/admin/categoria.php');
+                                                    }
+                                                }
+
+                                            }else{
+                                                
+                                                //Função permite bloquear códigos maliciosos que terceiros podem colocar ao registrar informação
+                                                $nome = addslashes($_POST['nome']);
+
+                                                if ($cat->cadastrarCategoria($nome) == true) {
+                                                    header('location: /meuTcc/admin/categoria.php');
+                                                }
+                                                //Preenchimento obrigatório, VERIFICAR SE VARIÁVEIS ESTÃO VAZIAS
+                                                else if (!empty($nome)) {
+                                                    if (!$cat->cadastrarCategoria($nome)) {
+                                                        echo  "<script>alert('Categoria já Cadastrada! Cadastre Uma nova Categoria');</script>";
+
+                                                    }
+                                                    else if($cat->cadastrarCategoria($nome) == '') {
+                                                        echo  "Preencha o Campo da Categoria!";
+                                                    }else{
+                                                        header('location: /meuTcc/admin/categoria.php');
+                                                    }
+                                                }
+
+                                            }                                            
                                         }
                                     ?>
                                         <form class="form-inline" method="POST" action="">
                                             <div class="form-group mx-sm-2 mb-2">
-                                                <input type="text" class="form-control" placeholder="Digite a Categoria" name="nome" require>
+                                                <input type="text" class="form-control" placeholder="Digite a Categoria" name="nome" value="<?php if (isset($res)) {
+                                                                                                                                                echo $res['nomeCategoria'];
+                                                                                                                                            } ?>">
                                             </div>
-                                            <button type="submit" class="btn btn-primary mb-2" name="btCadastrar">Confirmar</button>
+                                            <button type="submit" class="btn btn-warning mb-2" name="btEditar">Editar</button>
                                         </form>
                                     </div>
                                 </div>

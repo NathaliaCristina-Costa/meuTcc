@@ -1,3 +1,8 @@
+<?php
+require_once "../classe/Categoria.php";
+$cat = new Categoria("projetofinal", "localhost", "root", "");
+
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 

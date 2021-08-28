@@ -5,9 +5,20 @@ $cat = new Categoria("projetofinal", "localhost", "root", "");
 $cli = new Cliente("projetofinal", "localhost", "root", "");
 
 
+// Inicia sessões
+//session_start();
+
+// Verifica se existe os dados da sessão de login
+//if(!isset($_SESSION["id_Admin"]) || !isset($_SESSION["nomeAdmin"]))
+//{
+// Usuário não logado! Redireciona para a página de login
+//header("Location: login.php");
+//exit;
+//}
+
 ?>
 <!DOCTYPE html>
-<?php include("../classe/conexao.php"); ?>
+
 <html>
 
 <head>
@@ -41,9 +52,9 @@ $cli = new Cliente("projetofinal", "localhost", "root", "");
                 <li>
                     <a href="categoria.php"><i class="fas fa-bars mr-2 text-gray-400"></i> Categorias</a>
                 </li>
-                <li>
+                <!--li>
                     <a href="servico.php"><i class="fas fa-bars mr-2 text-gray-400"></i> Serviços</a>
-                </li>
+                </li-->
                 <li>
                     <a href="freelancer.php"><i class="fas fa-people-carry mr-2 text-gray-400"></i> Freelancers</a>
                 </li>
@@ -61,35 +72,7 @@ $cli = new Cliente("projetofinal", "localhost", "root", "");
 
         <!-- Page Content  -->
         <div id="content">
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <div class="container-fluid">
 
-                    <button type="button" id="sidebarCollapse" class="btn btn-light">
-                        <i class="fas fa-align-center"></i>
-                    </button>
-                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <i class="fas fa-align-justify"></i>
-                    </button>
-
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="nav navbar-nav ml-auto">
-                            <li class="nav-item dropdown no-arrow">
-
-                                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                </a>
-                                <!-- Dropdown - User Information -->
-                                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                                    <a class="dropdown-item" href="../login.php">
-                                        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                        Sair
-                                    </a>
-                                </div>
-                            </li>
-                        </ul>
-
-                    </div>
-                </div>
-            </nav>
             <div class="d-sm-flex align-items-center justify-content-between mb-4">
                 <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
             </div>
@@ -98,7 +81,7 @@ $cli = new Cliente("projetofinal", "localhost", "root", "");
             <div class="row">
 
                 <!-- Earnings (Monthly) Card Example -->
-                <div class="col-xl-4 col-md-6 mb-4">
+                <div class="col-xl-6 col-md-6 mb-4">
                     <div class="card border-left-primary shadow h-100 py-2">
                         <a href="categoria.php">
                             <div class="card-body">
@@ -124,25 +107,9 @@ $cli = new Cliente("projetofinal", "localhost", "root", "");
                         </a>
                     </div>
                 </div>
-                <div class="col-xl-4 col-md-6 mb-4">
-                    <div class="card border-left-primary shadow h-100 py-2">
-                        <div class="card-body">
-                            <div class="row no-gutters align-items-center">
-                                <div class="col mr-2">
-                                    <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">
-                                        Total Serviços</div>
-                                    <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
-                                </div>
-                                <div class="col-auto">
-                                    <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
                 <!-- Earnings (Monthly) Card Example -->
-                <div class="col-xl-4 col-md-6 mb-4">
+                <div class="col-xl-6 col-md-6 mb-4">
                     <div class="card border-left-success shadow h-100 py-2">
                         <div class="card-body">
                             <div class="row no-gutters align-items-center">

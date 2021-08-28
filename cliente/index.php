@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<?php include("../classe/conexao.php");?>
+
 <html>
 
 <head>
@@ -23,8 +23,8 @@
 <body>
     <div class="wrapper">
         <!-- Sidebar  -->
-        <nav id="sidebar">
-            <div class="sidebar-header">
+        <nav id="sidebar" s>
+            <div class="sidebar-header" >
                 <h3><i class="fas fa-user-friends"></i> Cliente</h3>
             </div>
 
@@ -37,7 +37,7 @@
                     <a href="servico.php"><i class="fas fa-shopping-cart mr-2 text-gray-400"></i> Novo Pedido</a>
                 </li>
                 <li>
-                    <a href="atendimento.php"><i class="fas fa-comments mr-2 text-gray-400"></i> Atendimento ao Cliente</a>
+                    <a href="atendimentoCliente.php"><i class="fas fa-comments mr-2 text-gray-400"></i> Atendimento ao Cliente</a>
                 </li>
                 <li>
                     <a href="../login.php"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i> Sair</a>
@@ -47,7 +47,7 @@
 
         <!-- Page Content  -->
         <div id="content">
-            <nav class="navbar navbar-expand-lg navbar-dark cor-barra">
+            <nav class="navbar navbar-expand-lg navbar-dark cor-barra" ">
                 <div class="container-fluid">
 
                     <button type="button" id="sidebarCollapse" class="btn btn-light">
@@ -183,7 +183,7 @@
     <footer class="bg-dark text-center text-white">
 
         <!-- Copyright -->
-        <div class="text-center p-3" style="background-color: #d63384">
+        <div class="text-center p-3 " style="background-color: #000">
             © Projeto Final
 
         </div>

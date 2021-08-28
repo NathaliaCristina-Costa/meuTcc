@@ -1,6 +1,5 @@
 <?php
-require_once "../classe/Categoria.php";
-$cat = new Categoria("projetofinal", "localhost", "root", "");
+
 
 ?>
 <!DOCTYPE html>
@@ -27,7 +26,7 @@ $cat = new Categoria("projetofinal", "localhost", "root", "");
 
 <body id="page-top">
   <!-- Navigation-->
-  <nav class="navbar navbar-expand-lg cor-navbar text-uppercase fixed-top" id="mainNav">
+  <nav class="navbar navbar-dark bg-dark navbar-expand-lg  text-uppercase fixed-top" id="mainNav">
     <div class="container">
       <a class="navbar-brand js-scroll-trigger" href="#page-top">Freelancer</a>
       <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-danger text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -44,8 +43,8 @@ $cat = new Categoria("projetofinal", "localhost", "root", "");
             <small>Login</small>
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="../projetoFinal/freelancer/login.php"><small><i class="fas fa-people-carry"></i>  Freelancer</small></a>
-              <a class="dropdown-item" href="../projetoFinal/cliente/login.php"><small><i class="fas fa-user-friends"></i>  Cliente</small></a>
+              <a class="dropdown-item" href="../meuTcc/freelancer/login.php"><small><i class="fas fa-people-carry"></i>  Freelancer</small></a>
+              <a class="dropdown-item" href="../meuTcc/cliente/login.php"><small><i class="fas fa-user-friends"></i>  Cliente</small></a>
             </div>
           </li>
         </ul>
@@ -53,7 +52,7 @@ $cat = new Categoria("projetofinal", "localhost", "root", "");
     </div>
   </nav>
   <!-- Masthead-->
-  <header class="masthead cor-especial text-white text-center">
+  <header class="masthead  text-white text-center" style="background-color: #000c;">
     <div class="container d-flex align-items-center flex-column">
       <!-- Masthead Avatar Image-->
       <img class="masthead-avatar mb-5" src="src/img/freelancer.jpg" alt="" />
@@ -229,7 +228,7 @@ $cat = new Categoria("projetofinal", "localhost", "root", "");
 
 
   <!-- Copyright Section-->
-  <div class="copyright py-4 text-center text-white">
+  <div class="copyright py-4 text-center text-white" style="background-color: #000c;">
     <div class="container"><small>
         <p>Projeto Final</p>
         <p>2021</p> <i class="fab fa-gratipay"></i>

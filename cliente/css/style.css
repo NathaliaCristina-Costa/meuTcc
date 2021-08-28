@@ -24,7 +24,7 @@ a:focus {
     transition: all 0.3s;
 }
 .cor-barra{
-    background-color:#d63384;
+    background-color:#000;
 }
 .navbar {
     padding: 15px 10px;
@@ -62,7 +62,7 @@ a:focus {
 #sidebar {
     min-width: 250px;
     max-width: 250px;
-    background: #d63384;
+    background-color: #000;
     color: #fff;
     transition: all 0.3s;
 }
@@ -71,9 +71,13 @@ a:focus {
     margin-left: -250px;
 }
 
+#rodape{
+    background-color: #000;
+}
+
 #sidebar .sidebar-header {
     padding: 20px;
-    background: #d63384;
+    background: #000;
 }
 
 #sidebar ul.components {

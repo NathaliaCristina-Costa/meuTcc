@@ -39,9 +39,9 @@ $cli = new Cliente("projetofinal", "localhost", "root", "");
                 <li>
                     <a href="categoria.php"><i class="fas fa-bars mr-2 text-gray-400"></i> Categorias</a>
                 </li>
-                <li>
+                <!--li>
                     <a href="servico.php"><i class="fas fa-bars mr-2 text-gray-400"></i> Serviços</a>
-                </li>
+                </li-->
                 <li>
                     <a href="freelancer.php"><i class="fas fa-people-carry mr-2 text-gray-400"></i> Freelancers</a>
                 </li>
@@ -107,7 +107,7 @@ $cli = new Cliente("projetofinal", "localhost", "root", "");
                                                             Ações
                                                         </button>
                                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                            <a class="dropdown-item" href="">Excluir</a>
+                                                        <a class="dropdown-item" href="excluirCliente.php?id=<?php echo $dados[$i]['id_Cliente']; ?>">Excluir</a>
                                                         </div>
                                                     </div>
                                                 </td>
@@ -116,7 +116,7 @@ $cli = new Cliente("projetofinal", "localhost", "root", "");
                                             }
                                         } else //Não há registros.
                                         {
-                                            echo "Não há Categorias Cadastradas";
+                                           
                                         }
                                         ?>
                                     </tbody>

@@ -1,5 +1,5 @@
 <?php
-   
+
     class Categoria{
         private $pdo;
         

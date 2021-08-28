@@ -33,9 +33,9 @@
                 <li>
                     <a href="categoria.php"><i class="fas fa-bars mr-2 text-gray-400"></i> Categorias</a>
                 </li>
-                <li>
+                <!--li>
                     <a href="servico.php"><i class="fas fa-bars mr-2 text-gray-400"></i> Serviços</a>
-                </li>
+                </li-->
                 <li>
                     <a href="freelancer.php"><i class="fas fa-people-carry mr-2 text-gray-400"></i> Freelancers</a>
                 </li>

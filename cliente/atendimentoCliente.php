@@ -1,6 +1,6 @@
 <?php
-require_once "../classe/Servico.php";
-$serv = new Servico("projetofinal", "localhost", "root", "");
+require_once "../classe/Categoria.php";
+$cat = new Categoria("projetofinal", "localhost", "root", "");
 
 ?>
 
@@ -28,9 +28,9 @@ $serv = new Servico("projetofinal", "localhost", "root", "");
 <body>
     <div class="wrapper">
         <!-- Sidebar  -->
-        <nav id="sidebar">
+        <nav id="sidebar" >
             <div class="sidebar-header">
-                <h3><i class="fas fa-user-shield"></i><a href="index.php"> Admin</a></h3>
+                <h3><i class="fas fa-user-shield"></i><a href="index.php"> Cliente</a></h3>
             </div>
 
             <ul class="list-unstyled components">
@@ -38,9 +38,9 @@ $serv = new Servico("projetofinal", "localhost", "root", "");
                 <li>
                     <a href="categoria.php"><i class="fas fa-bars mr-2 text-gray-400"></i> Categorias</a>
                 </li>
-                <li>
+                <!--li>
                     <a href="servico.php"><i class="fas fa-bars mr-2 text-gray-400"></i> Serviços</a>
-                </li>
+                </li-->
                 <li>
                     <a href="freelancer.php"><i class="fas fa-people-carry mr-2 text-gray-400"></i> Freelancers</a>
                 </li>
@@ -64,7 +64,6 @@ $serv = new Servico("projetofinal", "localhost", "root", "");
                     <div class="col p-md-0">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-                            <li class="breadcrumb-item active"><a href="servico.php">Serviços</a></li>
                         </ol>
                     </div>
                 </div>
@@ -72,53 +71,28 @@ $serv = new Servico("projetofinal", "localhost", "root", "");
 
                 <div class="container-fluid">
                     <div class="row">
-
+                        <?php
+                        ?>
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="card-title">Serviço</h4>
-                                    <p class="text-muted"><small>Cadastre o serviço</small></p>
+                                    <h4 class="card-title"><i class="fa fa-envelope" aria-hidden="true"></i> Fale Conosco</h4>
+                                    <br>                                   
                                     <div class="basic-form">
-                                    <?php
-                                        //Se o name existe e o botão cadastrar foi acionado, então as informações vão ser recolhidas
-                                        if (isset($_POST['nome'])) {
-                                            //Função permite bloquear códigos maliciosos que terceiros podem colocar ao registrar informação
-                                            $nome = addslashes($_POST['nome']);
 
-                                            if ($serv->cadastrarServico($nome) == true) {
-                                                header('location: /meuTcc/admin/servico.php');
-                                            }
-                                            //Preenchimento obrigatório, VERIFICAR SE VARIÁVEIS ESTÃO VAZIAS
-                                            else if (!empty($nome)) {
-                                                if (!$serv->cadastrarServico($nome)) {
-                                                    echo  "<script>alert('Serviço já Cadastrado! Cadastre Uma novo Serviço');</script>";
-
-                                                }
-                                                else if($serv->cadastrarServico($nome) == '') {
-                                                    echo  "Preencha o Campo do Serviço!";
-                                                }else{
-                                                    header('location: /meuTcc/admin/servico.php');
-                                                }
-                                            } 
-                                            
-                                            
-
-                                            
-                                        }
-                                    ?>
-                                        <form class="form-inline"  method="POST" action="">
-                                            <div class="form-group mb-2">
-                                                <select class="form-select" aria-label="Default select example">
-                                                    <option selected>Selecione Categoria do Serviço</option>
-                                                    <option value="1">One</option>
-                                                    <option value="2">Two</option>
-                                                    <option value="3">Three</option>
-                                                </select>
+                                        <form>
+                                        <div class="mb-3">
+                                                <label for="nome" class="form-label">Nome</label>
+                                                <input type="text" class="form-control" id="nome" placeholder="Nome">
                                             </div>
-                                            <div class="form-group mx-sm-2 mb-2">
-                                            <input type="text" class="form-control" placeholder="Digite a Categoria" name="nome" value="<?php if(isset($res)){echo $res['nome'];}?>">
+                                            <div class="mb-3">
+                                                <label for="email" class="form-label">Email</label>
+                                                <input type="email" class="form-control" id="email" placeholder="nome@examplo.com">
                                             </div>
-                                            <button type="submit" class="btn btn-primary mb-2">Confirmar</button>
+                                            <div class="mb-3">
+                                                <label for="mensagem" class="form-label">Mensagem</label>
+                                                <textarea class="form-control" id="mensagem" rows="3"></textarea>
+                                            </div>
                                         </form>
                                     </div>
                                 </div>

@@ -227,6 +227,10 @@ a:not([href]):not([class]), a:not([href]):not([class]):hover {
   text-decoration: none;
 }
 
+header{
+  background-color: #000cc;
+}
+
 pre,
 code,
 kbd,
@@ -446,14 +450,15 @@ output {
   display: inline-block;
 }
 
+
 .navbar{
-  background-color: #ba4c63;
+  background-color: #000;
 }
 #cor-especial{
-  background-color: #ff4c63;
+  background-color: #000c00
 }
 .cor-especial{
-  background-color: #ff4c63;
+  background-color: #000c00;
 }
 
 
@@ -11102,7 +11107,7 @@ html {
 }
 
 .copyright {
-  background-color: #ba4c63;
+  background-color: #000;
 }
 
 .cadastro .cadastro-item {

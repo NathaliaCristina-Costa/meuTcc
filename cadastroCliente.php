@@ -1,3 +1,8 @@
+<?php
+  include_once("classe/Cliente.php");
+  $cliente = new Cliente("projetofinal", "localhost", "root", "");
+?>
+
 <!DOCTYPE html>
 <html class="cor-fundo" lang="pt-br">
 
@@ -34,12 +39,36 @@
           <div class="col-lg-6">
             <div class="p-5">
               <div class="text-center">
-                <h1 class="h4 text-gray-900 mb-4">Cadastre-se!</h1>
-                <hr>
-                <p>Seja um cliente da nossa plataforma!</p>
+                <h1 class="h4 text-gray-900 mb-4">Cadastro</h1>
                 <hr>
               </div>
-              <form class="user" method="POST" action="salvaCliente.php">
+              <?php
+                //Se o name existe e o botão cadastrar foi acionado, então as informações vão ser recolhidas
+                if (isset($_POST['nome'])) {
+                  //Função permite bloquear códigos maliciosos que terceiros podem colocar ao registrar informação
+                  $nome = addslashes($_POST['nome']);
+                  $telefone = addslashes($_POST['telefone']);
+                  $email = addslashes($_POST['email']);
+                  $senha = addslashes($_POST['senha']);
+
+                  if ($cliente->cadastrarCliente($nome, $telefone, $email, $senha) == true) {
+                      
+                      header('location: /meuTcc/cliente/login.php');
+                      echo "<script>alert(Conta Registrada com Sucesso!)</script>"; 
+                  }
+                  //Preenchimento obrigatório, VERIFICAR SE VARIÁVEIS ESTÃO VAZIAS
+                  else if (!empty($email)) {
+                    if (!$cliente->cadastrarCliente($nome, $telefone, $email, $senha)) {
+                        echo  "<script>alert('Email já Cadastrado! Cadastre Um novo Email');</script>";
+
+                    }
+                  }
+                  
+
+                  
+              }
+              ?>
+              <form class="user" method="POST" action="">
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-6">
                     <input type="text" class="form-control form-control-user" name="nome" id="nome" placeholder="Nome">
@@ -49,27 +78,21 @@
                       placeholder="Telefone">
                   </div>
                 </div>
-                <div class="form-group">
-                  <div class="col-sm-12 mb-3 mb-sm-6">
+                <div class="form-group row">
+                  <div class="col-sm-6 mb-3 mb-sm-6">
                     <input type="email" class="form-control form-control-user" name="email" id="email"
                       placeholder="Email">
                   </div>
-                </div>
-                <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-6">
                     <input type="password" class="form-control form-control-user" name="senha" id="senha"
                       placeholder="Senha">
-                  </div>
-                  <div class="col-sm-6">
-                    <input type="password" class="form-control form-control-user" id="exampleRepeatPassword"
-                      placeholder="Confirme a Senha">
                   </div>
                 </div>
                 <hr>
                 <br>
                 <div class="row justify-content-center">
                   <div class="col-sm-6 col-lg-4 mb-3">                        
-                      <a href="login.php"><input type="submit" value="Registrar" class="btn" id="registrar"></a>
+                      <a href=""><input type="submit" value="Registrar" class="btn" id="registrar"></a>
                   </div>
               </div>
                 

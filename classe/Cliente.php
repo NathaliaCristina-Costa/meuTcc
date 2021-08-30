@@ -23,17 +23,18 @@
             return $res;
         }
 
-        //FUNÇÃO CADASTRA CATEGORIA NO BANCO DE DADOS
+        //FUNÇÃO CADASTRA CLIENTE NO BANCO DE DADOS
         public function cadastrarCliente($nome, $telefone, $email, $senha){
             //ANTES DE CADASTRAR, VERIFICAR SE CATEGORIA JÁ FOI CADASTRADA
             $cmd = $this->pdo->prepare("SELECT id_Cliente FROM cliente WHERE emailCliente = :e");
             $cmd->bindValue(":e", $email);
             $cmd->execute();
 
+            //pessoa já cadastrada;
             if($cmd->rowCount()>0){
                 return false;
             }else{ 
-             //categoria não encontrada retornar verdadeiro
+             //pessoa não encontrada retornar verdadeiro
                 $cmd = $this->pdo->prepare("INSERT INTO cliente (nomeCliente, telefoneCliente, emailCliente, senhaCliente) VALUES (:n, :t, :e, :s)");
 
                 $cmd->bindValue(":n", $nome);
@@ -44,6 +45,26 @@
                 return true;
             }
             
+        }
+
+        //FAZER O LOGIN
+        public function logar($email, $senha){
+            //Verificar se existe cadastro do cliente
+            $cmd = $this->pdo->prepare("SELECT id_Cliente FROM cliente WHERE emailCliente = :e AND senhaCliente :s");
+            $cmd->bindValue(":e", $email);
+            $cmd->bindValue(":s", $senha);
+            $cmd->execute();
+
+            //se retornou ID a pessoa está cadastrada
+            if ($cmd->rowCount()>0) {
+               //Entrar no sistema
+               $res = $cmd->fetchAll(PDO::FETCH_ASSOC);
+               session_start();
+               $_SESSION['id_Cliente'] = $res['id_Cliente']; 
+               return true; // Login Efetuado
+            }else{
+                return false;
+            }
         }
 
         //METODO DE EXCLUSÃO
@@ -64,6 +85,8 @@
             return $res;
            
         }
+
+        
     }
    
 ?>

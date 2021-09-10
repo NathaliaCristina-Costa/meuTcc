@@ -1,3 +1,22 @@
+<?php
+require_once "../../model/table/Categoria.php";
+require_once "../../model/table/Cliente.php";
+$cat = new Categoria("projetofinal", "localhost", "root", "admin");
+$cli = new Cliente("projetofinal", "localhost", "root", "admin");
+
+
+// Inicia sessões
+//session_start();
+
+// Verifica se existe os dados da sessão de login
+//if(!isset($_SESSION["id_Admin"]) || !isset($_SESSION["nomeAdmin"]))
+//{
+// Usuário não logado! Redireciona para a página de login
+//header("Location: login.php");
+//exit;
+//}
+
+?>
 <!DOCTYPE html>
 
 <html>
@@ -7,7 +26,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Clientes</title>
+    <title>Administrador</title>
 
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
@@ -23,24 +42,27 @@
 <body>
     <div class="wrapper">
         <!-- Sidebar  -->
-        <nav id="sidebar" s>
+        <nav id="sidebar">
             <div class="sidebar-header">
-                <h3><i class="fas fa-user-friends"></i> Cliente</h3>
+                <h3><i class="fas fa-user-shield"></i> Admin</h3>
             </div>
 
             <ul class="list-unstyled components">
 
                 <li>
-                    <a href="categoria.php"><i class="fas fa-hand-holding-usd mr-2 text-gray-400"></i> Pedidos que Fiz</a>
+                    <a href="categoria.php"><i class="fas fa-bars mr-2 text-gray-400"></i> Categorias</a>
+                </li>
+                <!--li>
+                    <a href="servico.php"><i class="fas fa-bars mr-2 text-gray-400"></i> Serviços</a>
+                </li-->
+                <li>
+                    <a href="freelancer.php"><i class="fas fa-people-carry mr-2 text-gray-400"></i> Freelancers</a>
                 </li>
                 <li>
-                    <a href="servico.php"><i class="fas fa-shopping-cart mr-2 text-gray-400"></i> Novo Pedido</a>
+                    <a href="cliente.php"><i class="fas fa-user-friends mr-2 text-gray-400"></i> Clientes</a>
                 </li>
                 <li>
-                    <a href="atendimentoCliente.php"><i class="fas fa-comments mr-2 text-gray-400"></i> Atendimento ao Cliente</a>
-                </li>
-                <li>
-                    <a href="categoria.php"><i class="fas fa-edit mr-2 text-gray-400"></i> Editar Minha Conta</a>
+                    <a href="atendimento.php"><i class="fas fa-comments mr-2 text-gray-400"></i> Mensagens do Atendimento</a>
                 </li>
                 <li>
                     <a href="../login.php"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i> Sair</a>
@@ -51,51 +73,43 @@
         <!-- Page Content  -->
         <div id="content">
 
-            
-
             <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                <h1 class="h3 mb-0 text-gray-800">Pedidos que Fiz</h1>
+                <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
             </div>
 
             <!-- Content Row -->
             <div class="row">
 
                 <!-- Earnings (Monthly) Card Example -->
-                <div class="col-xl-4 col-md-6 mb-4">
+                <div class="col-xl-6 col-md-6 mb-4">
                     <div class="card border-left-primary shadow h-100 py-2">
-                        <div class="card-body">
-                            <div class="row no-gutters align-items-center">
-                                <div class="col mr-2">
-                                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                        Total Categorias</div>
-                                    <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
-                                </div>
-                                <div class="col-auto">
-                                    <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                        <a href="categoria.php">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-3">
+                                            Total de Categorias
+                                        </div>
+                                        <div class="text-center font-weight-bold text-primary text-uppercase mb-1">
+                                            <?php
+                                            $dados = $cat->totalRegistroCategoria();
+                                            echo "<h2>" . count($dados) . "</h2>";
+                                            ?>
+                                        </div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
+                                    </div>
+                                    <div class="col-auto">
+
+                                        <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-6 mb-4">
-                    <div class="card border-left-primary shadow h-100 py-2">
-                        <div class="card-body">
-                            <div class="row no-gutters align-items-center">
-                                <div class="col mr-2">
-                                    <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">
-                                        Total Serviços</div>
-                                    <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
-                                </div>
-                                <div class="col-auto">
-                                    <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                                </div>
-                            </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
 
                 <!-- Earnings (Monthly) Card Example -->
-                <div class="col-xl-4 col-md-6 mb-4">
+                <div class="col-xl-6 col-md-6 mb-4">
                     <div class="card border-left-success shadow h-100 py-2">
                         <div class="card-body">
                             <div class="row no-gutters align-items-center">
@@ -116,22 +130,31 @@
                 <!-- Earnings (Monthly) Card Example -->
                 <div class="col-xl-6 col-md-6 mb-4">
                     <div class="card border-left-info shadow h-100 py-2">
-                        <div class="card-body">
-                            <div class="row no-gutters align-items-center">
-                                <div class="col mr-2">
-                                    <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Total de Clientes
-                                    </div>
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col-auto">
-                                            <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"></div>
+                        <a href="cliente.php">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                            Total de Clientes
+                                        </div>
+                                        <div class="text-center font-weight-bold text-info text-uppercase mb-1">
+                                            <?php
+                                            $dados = $cli->totalRegistroCliente();
+                                            echo "<h2>" . count($dados) . "</h2>";
+                                            ?>
+                                        </div>
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col-auto">
+                                                <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"></div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-auto">
-                                    <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                                    <div class="col-auto">
+                                        <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
 
@@ -160,7 +183,7 @@
     <footer class="bg-dark text-center text-white">
 
         <!-- Copyright -->
-        <div class="text-center p-3 " style="background-color: #000">
+        <div class="text-center p-3" style="background-color: #000">
             © Projeto Final
 
         </div>

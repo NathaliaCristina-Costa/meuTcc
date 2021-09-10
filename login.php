@@ -16,7 +16,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="css/cadastroCliente.css" rel="stylesheet">
+    <link href="assets/css/cadastroCliente.css" rel="stylesheet">
 
 </head>
 
@@ -33,7 +33,7 @@
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
                         <div class="row">
-                            <div class="col-lg-6 d-none d-lg-block bg-register-image "><img class="masthead-avatar mb-5 imagem-login" src="src/img/login.jpg " alt="" /></div>
+                            <div class="col-lg-6 d-none d-lg-block bg-register-image "><img class="masthead-avatar mb-5 imagem-login" src="assets/img/login.jpg " alt="" /></div>
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
@@ -57,7 +57,7 @@
                                                     Me</label>
                                             </div>
                                         </div>
-                                        <a href="../cliente/index.php" class="btn btn-success btn-user btn-block">
+                                        <a href="src/view/cliente/index.php" class="btn btn-success btn-user btn-block">
                                             Login
                                         </a>
                                     </form>

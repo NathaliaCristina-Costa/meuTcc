@@ -1,7 +1,3 @@
-<?php
-
-
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -21,7 +17,7 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
   <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
   <!-- Core theme CSS (includes Bootstrap)-->
-  <link href="css/styles.css" rel="stylesheet" />
+  <link href="assets/css/styles.css" rel="stylesheet" />
 </head>
 
 <body id="page-top">
@@ -43,8 +39,8 @@
             <small>Login</small>
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="../meuTcc/freelancer/login.php"><small><i class="fas fa-people-carry"></i>  Freelancer</small></a>
-              <a class="dropdown-item" href="../meuTcc/cliente/login.php"><small><i class="fas fa-user-friends"></i>  Cliente</small></a>
+              <a class="dropdown-item" href="src/view/freelancer/login.php"><small><i class="fas fa-people-carry"></i>  Freelancer</small></a>
+              <a class="dropdown-item" href="src/view/cliente/login.php"><small><i class="fas fa-user-friends"></i>  Cliente</small></a>
             </div>
           </li>
         </ul>
@@ -154,15 +150,8 @@
         </div>
       </div>
     </div>
-
-
-
-
-
-
-
-
   </section>
+
   <!-- About Section-->
   <section class="page-section" id="about">
     <div class="container">
@@ -183,11 +172,10 @@
           em meio uma pandemia que dura a um pouco mais de 1 ano e meio, surgiu-se a idéia de criar uma pequena startup
           para que o indice de desemprego que chega no momento a 14,7% diminuisse, gerando renda para algumas familias.
         </p>
-
-
       </div>
     </div>
   </section>
+
   <!-- Contact Section-->
   <section class="page-section cadastro" id="cadastro">
     <div class="container">
@@ -224,9 +212,8 @@
       </div>
       </a>
   </section>
+
   <!-- Footer-->
-
-
   <!-- Copyright Section-->
   <div class="copyright py-4 text-center text-white" style="background-color: #000c;">
     <div class="container"><small>
@@ -235,16 +222,11 @@
       </small></div>
   </div>
 
-
-
-
-
   <!-- Bootstrap core JS-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
   <!-- Third party plugin JS-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-
 
   <script src="js/scripts.js"></script>
 

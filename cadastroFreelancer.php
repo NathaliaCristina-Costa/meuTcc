@@ -17,8 +17,8 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="css/jquery.steps.css" rel="stylesheet">
-    <link href="css/cadastro.css" rel="stylesheet" />
+    <link href="assets/css/jquery.steps.css" rel="stylesheet">
+    <link href="assets/css/cadastro.css" rel="stylesheet" />
 
 </head>
 

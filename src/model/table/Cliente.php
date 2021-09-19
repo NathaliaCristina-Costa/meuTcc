@@ -1,22 +1,90 @@
 <?php
+    require_once '../model/Bcrypt.php';
+    class Cliente {
+        private $id;
+        private $nome;
+        private $email;
+        private $senha;
+        private $telefone;
 
-    class Cliente{
-        private $pdo;
+        public function setId($id)
+        {
+                $this->id = $id;
+
+                return $this;
+        }
+        public function getId()
+        {
+                return $this->id;
+        }
+
+        public function getNome()
+        {
+                return $this->nome;
+        }
+        public function setNome($nome)
+        {
+                $this->nome = $nome;
+
+                return $this;
+        }
         
-        //CONEXAO BANCO DE DADOS
-        public function __construct($dbname, $host, $user, $senha){
-            try {
-                $this->pdo = new PDO("mysql:dbname=".$dbname.";host=".$host,$user,$senha);
-            } catch (PDOException $e) {
-                echo "Erro com banco de dados: ".$e->getMessage();
-            } catch (Exception $e) {
-                echo "Erro generico: ".$e->getMessage();
+        public function getEmail()
+        {
+                return $this->email;
+        }
+        public function setEmail($email)
+        {
+                $this->email = $email;
+
+                return $this;
+        }
+
+        public function getSenha()
+        {
+                return $this->senha;
+        }
+        public function setSenha($senha)
+        {
+                $this->senha = $senha;
+
+                return $this;
+        }
+        
+        public function getTelefone()
+        {
+                return $this->telefone;
+        }
+        public function setTelefone($telefone)
+        {
+                $this->telefone = $telefone;
+
+                return $this;
+        }
+
+        //FAZER O LOGIN
+        public function validarCliente($pdo) {
+            $consulta = mysqli_query($pdo, "SELECT * FROM `cliente` WHERE emailCliente = '{$this->email}'");
+            // die(json_encode(mysqli_affected_rows($pdo)));
+            
+            if (mysqli_affected_rows($pdo) > 0) {
+                $consulta_hash = mysqli_query($pdo, "SELECT senhaCliente FROM `cliente` WHERE emailCliente = '{$this->email}'");
+                $hash = mysqli_fetch_array($consulta_hash);
+                if (Bcrypt::check($this->senha, $hash['senhaCliente'])) {
+                    $consulta = mysqli_query($pdo, "SELECT * FROM `cliente` WHERE emailCliente = '{$this->email}'");
+                    $dados_usuario = mysqli_fetch_array($consulta);
+
+                    return $dados_usuario;
+                } else {
+                    return "Senha incorreta!";
+                }
+            } else {
+                return false;
             }
         }
 
         //BUSCAR DADOS DO BANCO E MOSTRAR NA TABELA DA TELA
         public function buscarDados(){
-
             $res = array();
             $cmd = $this->pdo->query("SELECT * FROM cliente ORDER BY id_Cliente");
             $res = $cmd->fetchAll(PDO::FETCH_ASSOC);
@@ -47,26 +115,6 @@
             
         }
 
-        //FAZER O LOGIN
-        public function logar($email, $senha){
-            //Verificar se existe cadastro do cliente
-            $cmd = $this->pdo->prepare("SELECT id_Cliente FROM cliente WHERE emailCliente = :e AND senhaCliente :s");
-            $cmd->bindValue(":e", $email);
-            $cmd->bindValue(":s", $senha);
-            $cmd->execute();
-
-            //se retornou ID a pessoa está cadastrada
-            if ($cmd->rowCount()>0) {
-               //Entrar no sistema
-               $res = $cmd->fetchAll(PDO::FETCH_ASSOC);
-               session_start();
-               $_SESSION['id_Cliente'] = $res['id_Cliente']; 
-               return true; // Login Efetuado
-            }else{
-                return false;
-            }
-        }
-
         //METODO DE EXCLUSÃO
         public function excluirCliente($id){
             $cmd = $this->pdo->prepare("DELETE FROM categoria WHERE id_Cliente = :id");
@@ -85,8 +133,6 @@
             return $res;
            
         }
-
-        
     }
    
 ?>

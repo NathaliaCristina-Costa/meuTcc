@@ -42,17 +42,15 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Bem Vindo!</h1>
                                     </div>
-                                    <form class="user">
+                                    <form class="user" action="../../controller/LoginClienteController.php" method="POST">
                                         <div class="form-group">
                                             <div class="col-sm-12 mb-3 mb-sm-6">
-                                                <input type="email" class="form-control form-control-user"
-                                                    id="exampleInputEmail" placeholder="Email">
+                                                <input type="email" name="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Email">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <div class="col-sm-12 mb-3 mb-sm-6">
-                                                <input type="password" class="form-control form-control-user"
-                                                    id="exampleInputPassword" placeholder="Senha">
+                                                <input type="password" name="senha" class="form-control form-control-user" id="exampleInputPassword" placeholder="Senha">
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -62,11 +60,25 @@
                                                     Me</label>
                                             </div>
                                         </div>
-                                        <a href="../cliente/index.php" class="btn btn-success btn-user btn-block">
-                                            Login
-                                        </a>
+                                        <hr>
+                                        <input type="submit" value="Login" class="btn btn-success btn-user btn-block"/>
+                                        <?php
+                                            session_start();
+                                            if (isset($_SESSION['erro']['senha'])) {
+                                                echo "<p class=\"erro-login\">{$_SESSION['erro']['senha']}</p>";
+                                                session_unset();
+                                                session_destroy();
+                                            } else if (isset($_SESSION['erro']['email'])) {
+                                                echo "<p class=\"erro-login\">{$_SESSION['erro']['email']}</p>";
+                                                session_unset();
+                                                session_destroy();
+                                            } else if (isset($_SESSION['erro']['empty'])) {
+                                                echo "<p class=\"erro-login\">{$_SESSION['erro']['empty']}</p>";
+                                                session_unset();
+                                                session_destroy();
+                                            } 
+                                        ?>
                                     </form>
-                                    <hr>
                                 </div>
                             </div>
                         </div>

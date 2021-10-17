@@ -30,8 +30,8 @@
     <div class="card o-hidden border-0 shadow-lg my-5">
         <div class="card-body p-0">
             <div class="row">
-                <div class="col-lg-6 d-none d-lg-block bg-register-image">
-                    <img class="masthead-avatar mb-5 imagem-freelancer" src="src/img/freelancer.jpg" alt=""/>
+                <div class="col-lg-6 d-none d-lg-block bg-register-image"><img
+                            class="masthead-avatar mb-5 imagem-freelancer" src="src/img/freelancer.jpg" alt=""/>
                 </div>
                 <div class="col-lg-6">
                     <div class="p-5">
@@ -44,66 +44,103 @@
                         <div class="container-fluid">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <form method="post" action="../../controller/CadastroController.php"
-                                          id="step-form-horizontal" class="step-form-horizontal">
+                                    <form action="#" id="step-form-horizontal" class="step-form-horizontal">
                                         <div>
-                                            <h4 class="mb-4">Informações Da Conta</h4>
+                                            <h4>Informações Da Conta</h4>
+                                            <section>
+                                                <form>
+                                                    <div class="row">
+                                                        <div class="col-lg-6">
+                                                            <div class="form-group">
+                                                                <input type="text" name="nome" class="form-control"
+                                                                       placeholder="Nome" required>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <div class="form-group">
+                                                                <input type="email" name="email" class="form-control"
+                                                                       placeholder="Email" required>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <div class="form-group">
+                                                                <input type="password" name="senha" class="form-control"
+                                                                       placeholder="Senha" required>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <div class="form-group">
+                                                                <input type="text" data-mask="(00) 00000-0000"
+                                                                       class="form-control" placeholder="Telefone"
+                                                                       id="telefone" name="telefone">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-sm-12 mb-3 mb-sm-6">
+                                                            <select class="form-select form-select-md mb-3"
+                                                                    aria-label=".form-select-md example" id="mySelect">
+                                                                <option>Escolha Categoria</option>
+                                                                <option value="evento">Evento</option>
+                                                                <option value="reparo">Reparo & Reforma</option>
+                                                                <option value="saude">Saúde</option>
+                                                                <option value="domestico">Serviço Doméstico</option>
+                                                                <option value="tecnologia">Tecnologia & Design</option>
+                                                                <option value="assistencia">Assistência Técnica</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </section>
+
+                                            <h4>Pagamento</h4>
                                             <section>
                                                 <div class="row">
-                                                    <div class="col-lg-6">
+                                                    <div class="col-6">
                                                         <div class="form-group">
-                                                            <input type="text" name="nome" class="form-control"
-                                                                   placeholder="Nome Completo" required>
+                                                            <input class="form-control" type="number" name="numCartao"
+                                                                   placeholder="Número Cartão">
                                                         </div>
                                                     </div>
-                                                    <div class="col-lg-6">
+                                                    <div class="col-6">
                                                         <div class="form-group">
-                                                            <input type="email" name="email" class="form-control"
-                                                                   placeholder="Email" required>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-6">
-                                                        <div class="form-group">
-                                                            <input type="password" name="senha" class="form-control"
-                                                                   placeholder="Senha" required>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-6">
-                                                        <div class="form-group">
-                                                            <input type="text" data-mask="(00) 00000-0000"
-                                                                   class="form-control" placeholder="Telefone"
-                                                                   id="telefone" name="telefone">
+                                                            <input class="form-control" type="month" name="data"
+                                                                   placeholder="Data Validade">
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="row">
-                                                    <div class="col-sm-12 mb-3 mb-sm-6">
-                                                        <select class="form-select form-select-md mb-3"
-                                                                aria-label=".form-select-md example" id="mySelect" name="categoria"
-                                                                required>
-                                                            <option>Escolha Categoria</option>
-                                                            <option value="evento">Evento</option>
-                                                            <option value="reparo">Reparo & Reforma</option>
-                                                            <option value="saude">Saúde</option>
-                                                            <option value="domestico">Serviço Doméstico</option>
-                                                            <option value="tecnologia">Tecnologia & Design</option>
-                                                            <option value="assistencia">Assistência Técnica</option>
-                                                        </select>
+                                                    <div class="col-8">
+                                                        <div class="form-group">
+                                                            <input class="form-control" type="text" name="nomeCartao"
+                                                                   placeholder="Nome Impresso no Cartão">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <div class="form-group">
+                                                            <input class="form-control" type="number"
+                                                                   name="codSeguranca" placeholder="CVC">
+                                                        </div>
                                                     </div>
                                                 </div>
-                                                <div class="row">
-                                                    <div class="col-sm-12 mb-sm-6 text-center">
-                                                        <input type="submit" class="btn btn-google" value="Cadastrar"
-                                                               name="dados-freelancer">
+                                                <div class="cardPg">
+                                                    <div class="card-footer">
+                                                        <h6>Total </h6>
+                                                        <hr>
+                                                        R$ 90,00
                                                     </div>
                                                 </div>
                                             </section>
+
                                         </div>
                                     </form>
                                 </div>
                             </div>
                         </div>
+
                     </div>
+
+
                 </div>
             </div>
         </div>

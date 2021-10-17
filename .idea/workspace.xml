@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="0cd5dbc5-20f7-4306-86dd-31fac9c3ebd1" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/controller/CadastroController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/LoginAdminController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/LoginClienteController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Bcrypt.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/database/connect.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/database/sql/comando.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/table/Admin.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/table/Categoria.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/table/Cliente.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/table/Freelancer.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/table/Login.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/semantica-html/apple.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/semantica-html/html-divs.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/semantica-html/html-semantico.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/admin/Excluircategoria.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/admin/atendimento.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/admin/cadastroAdmin.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/admin/cadastroCategoria.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/admin/categoria.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/admin/cliente.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/admin/css/cadastroCliente.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/admin/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/admin/editarCategoria.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/admin/excluirCliente.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/admin/freelancer.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/admin/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/admin/js/jquery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/admin/login.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/admin/src/img/assistencia-tecnica-computadores.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/admin/src/img/assistencia.jfif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/admin/src/img/cliente.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/admin/src/img/clientelogin.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/admin/src/img/comentarios.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/admin/src/img/domestico.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/admin/src/img/eventos.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/admin/src/img/freelancer-cadastro.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/admin/src/img/freelancer.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/admin/src/img/imagem-cliente.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/admin/src/img/imagem.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/admin/src/img/img.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/admin/src/img/login.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/admin/src/img/quemsomos-andreia.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/admin/src/img/quemsomos-marcela.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/admin/src/img/quemsomos-roberta.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/admin/src/img/reforma.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/admin/src/img/saude.jfif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/admin/src/img/saude.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/admin/src/img/tecnologia.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/admin/src/semantica-html/apple.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/admin/src/semantica-html/html-divs.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/admin/src/semantica-html/html-semantico.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/admin/src/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/cliente/atendimentoCliente.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/cliente/cadastroCliente.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/cliente/css/cadastroCliente.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/cliente/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/cliente/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/cliente/js/jquery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/cliente/login.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/cliente/src/img/assistencia-tecnica-computadores.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/cliente/src/img/assistencia.jfif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/cliente/src/img/cliente.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/cliente/src/img/clientelogin.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/cliente/src/img/comentarios.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/cliente/src/img/domestico.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/cliente/src/img/eventos.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/cliente/src/img/freelancer-cadastro.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/cliente/src/img/freelancer.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/cliente/src/img/imagem-cliente.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/cliente/src/img/imagem.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/cliente/src/img/img.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/cliente/src/img/login.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/cliente/src/img/quemsomos-andreia.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/cliente/src/img/quemsomos-marcela.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/cliente/src/img/quemsomos-roberta.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/cliente/src/img/reforma.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/cliente/src/img/saude.jfif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/cliente/src/img/saude.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/cliente/src/img/tecnologia.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/cliente/src/semantica-html/apple.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/cliente/src/semantica-html/html-divs.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/cliente/src/semantica-html/html-semantico.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/cliente/src/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/freelancer/cadastroFreelancer.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/freelancer/css/cadastroFreelancer.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/freelancer/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/freelancer/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/freelancer/js/jquery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/freelancer/login.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/freelancer/src/img/assistencia-tecnica-computadores.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/freelancer/src/img/assistencia.jfif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/freelancer/src/img/cliente.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/freelancer/src/img/clientelogin.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/freelancer/src/img/comentarios.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/freelancer/src/img/domestico.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/freelancer/src/img/eventos.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/freelancer/src/img/freelancer-cadastro.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/freelancer/src/img/freelancer.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/freelancer/src/img/imagem-cliente.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/freelancer/src/img/imagem.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/freelancer/src/img/img.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/freelancer/src/img/login.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/freelancer/src/img/quemsomos-andreia.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/freelancer/src/img/quemsomos-marcela.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/freelancer/src/img/quemsomos-roberta.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/freelancer/src/img/reforma.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/freelancer/src/img/saude.jfif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/freelancer/src/img/saude.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/freelancer/src/img/tecnologia.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/freelancer/src/semantica-html/apple.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/freelancer/src/semantica-html/html-divs.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/freelancer/src/semantica-html/html-semantico.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/freelancer/src/style.css" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="issue/#12" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="MIXED" />
+    <option name="SWAP_SIDES_IN_COMPARE_BRANCHES" value="true" />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectId" id="1zdGXOVm0eVd1ZPSEjzkNFvZnYy" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\meuTcc" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\meuTcc\src\view\freelancer" />
+      <recent name="C:\xampp\htdocs\meuTcc\src\view\cliente" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0cd5dbc5-20f7-4306-86dd-31fac9c3ebd1" name="Changes" comment="" />
+      <created>1634470591446</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1634470591446</updated>
+      <workItem from="1634470594516" duration="20166000" />
+      <workItem from="1634503127294" duration="936000" />
+    </task>
+    <task id="LOCAL-00001" summary="Realizado verificação para prosseguir para dashboard">
+      <created>1634474695859</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1634474695859</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Cadastro de Clientes">
+      <created>1634483863317</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1634483863317</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Cadastro de Administradores">
+      <created>1634487204687</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1634487204687</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Correção do login de admins">
+      <created>1634488336556</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1634488336556</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Criado cadastro para freelancers">
+      <created>1634502644473</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1634502644473</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Criado cadastro para freelancers">
+      <created>1634502978782</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1634502978782</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="issue/#10" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Realizado verificação para prosseguir para dashboard" />
+    <MESSAGE value="Cadastro de Clientes" />
+    <MESSAGE value="Cadastro de Administradores" />
+    <MESSAGE value="Correção do login de admins" />
+    <MESSAGE value="Criado cadastro para freelancers" />
+    <option name="LAST_COMMIT_MESSAGE" value="Criado cadastro para freelancers" />
+  </component>
+</project>

@@ -1,5 +1,5 @@
 <?php
-require_once '../Bcrypt.php';
+require_once '../model/Bcrypt.php';
 
 class Cliente
 {
@@ -8,6 +8,7 @@ class Cliente
     private $email;
     private $senha;
     private $telefone;
+    private $group = 3;
 
     public function setId($id)
     {
@@ -69,11 +70,15 @@ class Cliente
         return $this;
     }
 
+    public function getGroup()
+    {
+        return $this->group;
+    }
+
     //FAZER O LOGIN
     public function validarCliente($pdo)
     {
         $consulta = mysqli_query($pdo, "SELECT * FROM `cliente` WHERE emailCliente = '{$this->email}'");
-        // die(json_encode(mysqli_affected_rows($pdo)));
 
         if (mysqli_affected_rows($pdo) > 0) {
             $consulta_hash = mysqli_query($pdo, "SELECT senhaCliente FROM `cliente` WHERE emailCliente = '{$this->email}'");
@@ -81,7 +86,6 @@ class Cliente
             if (Bcrypt::check($this->senha, $hash['senhaCliente'])) {
                 $consulta = mysqli_query($pdo, "SELECT * FROM `cliente` WHERE emailCliente = '{$this->email}'");
                 $dados_usuario = mysqli_fetch_array($consulta);
-
                 return $dados_usuario;
             } else {
                 return "Senha incorreta!";
@@ -92,37 +96,24 @@ class Cliente
     }
 
     //BUSCAR DADOS DO BANCO E MOSTRAR NA TABELA DA TELA
-    public function buscarDados()
+    public function buscarDados($pdo)
     {
-        $res = array();
-        $cmd = $this->pdo->query("SELECT * FROM cliente ORDER BY id_Cliente");
-        $res = $cmd->fetchAll(PDO::FETCH_ASSOC);
-        return $res;
+        $consulta = mysqli_query($pdo, "SELECT * FROM `cliente` WHERE emailCliente = '{$this->email}'");
+        if (mysqli_affected_rows($pdo) > 0) {
+            return true;
+        }
     }
 
     //FUNÇÃO CADASTRA CLIENTE NO BANCO DE DADOS
-    public function cadastrarCliente($nome, $telefone, $email, $senha)
+    public function cadastrarCliente($pdo)
     {
-        //ANTES DE CADASTRAR, VERIFICAR SE CATEGORIA JÁ FOI CADASTRADA
-        $cmd = $this->pdo->prepare("SELECT id_Cliente FROM cliente WHERE emailCliente = :e");
-        $cmd->bindValue(":e", $email);
-        $cmd->execute();
-
-        //pessoa já cadastrada;
-        if ($cmd->rowCount() > 0) {
-            return false;
-        } else {
-            //pessoa não encontrada retornar verdadeiro
-            $cmd = $this->pdo->prepare("INSERT INTO cliente (nomeCliente, telefoneCliente, emailCliente, senhaCliente) VALUES (:n, :t, :e, :s)");
-
-            $cmd->bindValue(":n", $nome);
-            $cmd->bindValue(":t", $telefone);
-            $cmd->bindValue(":e", $email);
-            $cmd->bindValue(":s", $senha);
-            $cmd->execute();
+        $sql_inserir = mysqli_query($pdo, "INSERT INTO `cliente` (nomeCliente, emailCliente, senhaCliente, telefoneCliente, groups) VALUES ('{$this->nome}', '{$this->email}', '{$this->senha}', '{$this->telefone}', $this->group)");
+        if (mysqli_affected_rows($pdo) > 0) {
             return true;
+        } else {
+            echo "Error: " . $sql_inserir . "<br>" . mysqli_error($pdo);
+            return false;
         }
-
     }
 
     //METODO DE EXCLUSÃO

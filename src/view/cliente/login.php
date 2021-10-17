@@ -63,27 +63,34 @@
                                         <hr>
                                         <input type="submit" value="Login" class="btn btn-success btn-user btn-block"/>
                                         <?php
-                                            session_start();
-                                            if (isset($_SESSION['erro']['senha'])) {
-                                                echo "<hr>";
-                                                echo "<p class=\"erro-login\">{$_SESSION['erro']['senha']}</p>";
-                                                session_unset();
-                                                session_destroy();
-                                            } else if (isset($_SESSION['erro']['email'])) {
-                                                echo "<hr>";
-                                                echo "<p class=\"erro-login\">{$_SESSION['erro']['email']}</p>";
-                                                session_unset();
-                                                session_destroy();
-                                            } else if (isset($_SESSION['erro']['empty'])) {
-                                                echo "<hr>";
-                                                echo "<p class=\"erro-login\">{$_SESSION['erro']['empty']}</p>";
-                                                session_unset();
-                                                session_destroy();
-                                            } else if (isset($_SESSION['erro']['noLogin'])) {
-                                                echo "<hr>";
-                                                echo "<p class=\"erro-login\">{$_SESSION['erro']['noLogin']}</p>";
-                                                session_unset();
-                                                session_destroy();
+                                            if (!isset($_SESSION['cliente'])) {
+                                                session_start();
+                                                if (isset($_SESSION['erro']['senha'])) {
+                                                    echo "<hr>";
+                                                    echo "<p class=\"erro-login\">{$_SESSION['erro']['senha']}</p>";
+                                                    session_unset();
+                                                    session_destroy();
+                                                } else if (isset($_SESSION['erro']['email'])) {
+                                                    echo "<hr>";
+                                                    echo "<p class=\"erro-login\">{$_SESSION['erro']['email']}</p>";
+                                                    session_unset();
+                                                    session_destroy();
+                                                } else if (isset($_SESSION['erro']['empty'])) {
+                                                    echo "<hr>";
+                                                    echo "<p class=\"erro-login\">{$_SESSION['erro']['empty']}</p>";
+                                                    session_unset();
+                                                    session_destroy();
+                                                } else if (isset($_SESSION['erro']['noLogin'])) {
+                                                    echo "<hr>";
+                                                    echo "<p class=\"erro-login\">{$_SESSION['erro']['noLogin']}</p>";
+                                                    session_unset();
+                                                    session_destroy();
+                                                }else if (isset($_SESSION['erro']['user_exists'])) {
+                                                    echo "<hr>";
+                                                    echo "<p class=\"erro-login\">{$_SESSION['erro']['user_exists']}</p>";
+                                                    session_unset();
+                                                    session_destroy();
+                                                }
                                             }
                                         ?>
                                     </form>

@@ -13,13 +13,13 @@ if (isset($_POST['email']) && isset($_POST['senha'])) {
         if ($resultado == "Senha incorreta!") {
             session_start();
             $_SESSION['erro'] = array('senha' => "Senha incorreta!");
-            header('Location:../view/cliente/login.php');
+            header('Location:../view/admin/login.php');
         } else {
             session_start();
 
-            $admin->setId($resultado['id_Cliente']);
-            $admin->setNome($resultado['nomeCliente']);
-            $admin->setTelefone($resultado['telefoneCliente']);
+            $admin->setId($resultado['id']);
+            $admin->setNome($resultado['nome']);
+            $admin->setEmail($resultado['email']);
 
             $_SESSION['admin'] = array('id' => $admin->getId(), 'nome' => $admin->getNome(), 'email' => $admin->getEmail());
 

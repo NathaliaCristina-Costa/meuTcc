@@ -1,13 +1,12 @@
 <?php
-require_once '../Bcrypt.php';
+require_once '../../model/Bcrypt.php';
 
-class Cliente
+class Admin
 {
     private $id;
     private $nome;
     private $email;
     private $senha;
-    private $telefone;
 
     public function setId($id)
     {
@@ -57,29 +56,17 @@ class Cliente
         return $this;
     }
 
-    public function getTelefone()
-    {
-        return $this->telefone;
-    }
-
-    public function setTelefone($telefone)
-    {
-        $this->telefone = $telefone;
-
-        return $this;
-    }
-
     //FAZER O LOGIN
-    public function validarCliente($pdo)
+    public function validarAdmin($pdo)
     {
-        $consulta = mysqli_query($pdo, "SELECT * FROM `cliente` WHERE emailCliente = '{$this->email}'");
+        $consulta = mysqli_query($pdo, "SELECT * FROM `administrador` WHERE email = '{$this->email}'");
         // die(json_encode(mysqli_affected_rows($pdo)));
 
         if (mysqli_affected_rows($pdo) > 0) {
-            $consulta_hash = mysqli_query($pdo, "SELECT senhaCliente FROM `cliente` WHERE emailCliente = '{$this->email}'");
+            $consulta_hash = mysqli_query($pdo, "SELECT senha FROM `administrador` WHERE email = '{$this->email}'");
             $hash = mysqli_fetch_array($consulta_hash);
             if (Bcrypt::check($this->senha, $hash['senhaCliente'])) {
-                $consulta = mysqli_query($pdo, "SELECT * FROM `cliente` WHERE emailCliente = '{$this->email}'");
+                $consulta = mysqli_query($pdo, "SELECT * FROM `administrador` WHERE email = '{$this->email}'");
                 $dados_usuario = mysqli_fetch_array($consulta);
 
                 return $dados_usuario;
@@ -147,7 +134,3 @@ class Cliente
 }
 
 ?>
-
-
-
-            

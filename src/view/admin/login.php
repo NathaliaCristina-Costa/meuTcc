@@ -64,9 +64,7 @@
                                         </div>
                                     </div>
                                     <hr>
-                                    <a href="../cliente/index.php" class="btn btn-success btn-user btn-block">
-                                        Login
-                                    </a>
+                                    <input type="submit" class="btn btn-success btn-user btn-block" value="Login"></input>
                                 </form>
                                 <?php
                                 session_start();

@@ -1,7 +1,6 @@
 <?php
+session_start();
 if (isset($_SESSION['admin'])) {
-    require_once "../../model/table/Categoria.php";
-    require_once "../../model/table/Admin.php";
     ?>
     <!DOCTYPE html>
 
@@ -60,7 +59,7 @@ if (isset($_SESSION['admin'])) {
                         Atendimento</a>
                 </li>
                 <li>
-                    <a href="../../logout.php"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i> Sair</a>
+                    <a href="../../../logout.php"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i> Sair</a>
                 </li>
             </ul>
         </nav>

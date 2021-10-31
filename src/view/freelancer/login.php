@@ -46,13 +46,13 @@
                                         <form class="user" method="post" action="../../controller/LoginFreelancerController.php">
                                             <div class="form-group">
                                                 <div class="col-sm-12 mb-3 mb-sm-6">
-                                                    <input type="email" class="form-control form-control-user"
+                                                    <input type="email" name="email" class="form-control form-control-user"
                                                         id="exampleInputEmail" placeholder="Email">
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <div class="col-sm-12 mb-3 mb-sm-6">
-                                                    <input type="password" class="form-control form-control-user"
+                                                    <input type="password" name="senha" class="form-control form-control-user"
                                                         id="exampleInputPassword" placeholder="Senha">
                                                 </div>
                                             </div>

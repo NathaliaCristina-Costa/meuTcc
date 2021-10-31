@@ -93,7 +93,7 @@ class Freelancer
         $consulta = mysqli_query($pdo, "SELECT * FROM `freelancer` WHERE emailFreelancer = '{$this->email}'");
 
         if (mysqli_affected_rows($pdo) > 0) {
-            $consulta_hash = mysqli_query($pdo, "SELECT senhaCliente FROM `freelancer` WHERE emailFreelancer = '{$this->email}'");
+            $consulta_hash = mysqli_query($pdo, "SELECT senhaFreelancer FROM `freelancer` WHERE emailFreelancer = '{$this->email}'");
             $hash = mysqli_fetch_array($consulta_hash);
             if (Bcrypt::check($this->senha, $hash['senhaFreelancer'])) {
                 $consulta = mysqli_query($pdo, "SELECT * FROM `freelancer` WHERE emailFreelancer = '{$this->email}'");

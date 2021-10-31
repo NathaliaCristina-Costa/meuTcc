@@ -1,3 +1,7 @@
+<?php
+    session_start();
+    if (isset($_SESSION['freelancer'])) {
+?>
 <!DOCTYPE html>
 
 <html lang="pt-br">
@@ -43,7 +47,7 @@
                         <a href="atendimento.php"><i class="fas fa-comments mr-2 text-gray-400"></i> Fale Conosco</a>
                     </li>
                     <li>
-                        <a href="../../../index.php"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i> Sair</a>
+                        <a href="../../../logout.php"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i> Sair</a>
                     </li>
                 </ul>
             </nav>
@@ -130,3 +134,10 @@
         </script>
     </body>
 </html>
+<?php
+    } else {
+        session_start();
+        $_SESSION['erro'] = ["noLogin" => "Nenhum usuário logado, por favor, realize um login com algum usuário!"];
+        header('Location:login.php');
+    }
+?>

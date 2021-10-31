@@ -1,4 +1,5 @@
 <?php
+    session_start();
     if (isset($_SESSION['cliente'])) {
 ?>
         <!DOCTYPE html>
@@ -45,7 +46,7 @@
                                 <a href="categoria.php"><i class="fas fa-edit mr-2 text-gray-400"></i> Editar Minha Conta</a>
                             </li>
                             <li>
-                                <a href="../../../index.php"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i> Sair</a>
+                                <a href="../../../logout.php"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i> Sair</a>
                             </li>
                         </ul>
                     </nav>

@@ -11,6 +11,7 @@
         $resultado = $cliente->validarCliente($pdo);
         if ($resultado <> false) {
             if ($resultado == "Senha incorreta!") {
+                echo "Aqui";
                 session_start();
                 $_SESSION['erro'] = array('senha' => "Senha incorreta!");
                 header('Location:../view/cliente/login.php');
@@ -21,8 +22,7 @@
                 $cliente->setNome($resultado['nomeCliente']);
                 $cliente->setTelefone($resultado['telefoneCliente']);
 
-                $_SESSION['cliente'] = array('id' => $cliente->getId(),'nome' => $cliente->getNome(), 'telefone' => $cliente->getTelefone(), 'email' => $cliente->getEmail());
-
+                $_SESSION['cliente'] = ['id' => $cliente->getId(),'nome' => $cliente->getNome(), 'telefone' => $cliente->getTelefone(), 'email' => $cliente->getEmail()];
                 header('Location:../view/cliente/index.php');
             }
         } else if (empty($_POST['email']) && empty($_POST['senha'])) {

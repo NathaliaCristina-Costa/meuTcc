@@ -60,8 +60,7 @@
                                                     Me</label>
                                             </div>
                                         </div>
-                                        <hr>
-                                        <input type="submit" value="Login" class="btn btn-success btn-user btn-block"/>
+                                        <input type="submit" value="Login" class="btn btn-success btn-user btn-block mt-3"/>
                                         <?php
                                             session_start();
                                             if (isset($_SESSION['erro']['senha'])) {

@@ -1,4 +1,5 @@
 <?php
+    session_start();
     if (isset($_SESSION['freelancer'])) {
 ?>
 <!DOCTYPE html>

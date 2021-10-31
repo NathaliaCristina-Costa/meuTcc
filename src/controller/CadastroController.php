@@ -29,7 +29,7 @@ if (array_key_exists('dados-cliente', $_POST)) {
 } else if (array_key_exists('dados-freelancer', $_POST)) {
     $freelancer = new Freelancer();
     $freelancer->setEmail($_POST['email']);
-    if (!$freelancer->buscarDados($pdo)) {
+    if (!$freelancer->existeFreelancer($pdo)) {
         $freelancer->setSenha(Bcrypt::hash($_POST['senha']));
         $freelancer->setNome($_POST['nome']);
         $freelancer->setNomeCategoria($_POST['categoria']);

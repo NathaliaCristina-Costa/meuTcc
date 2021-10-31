@@ -39,7 +39,7 @@
                             <h1 class="h4 text-gray-900 mb-4">Cadastro</h1>
                             <hr>
                         </div>
-                        <form class="user" method="POST" action="../../controller/CadastroClienteController.php">
+                        <form class="user" method="POST" action="../../controller/CadastroController.php">
                             <div class="form-group row">
                                 <div class="col-sm-6 mb-3 mb-sm-6">
                                     <input type="text" class="form-control form-control-user" name="nome" id="nome"
@@ -62,7 +62,6 @@
                                            placeholder="Senha">
                                 </div>
                             </div>
-                            <hr>
                             <br>
                             <div class="row justify-content-center">
                                 <div class="col-sm-6 col-lg-4 mb-3">
@@ -70,9 +69,7 @@
                                            name="dados-cliente">
                                 </div>
                             </div>
-
                         </form>
-
                     </div>
                 </div>
             </div>
